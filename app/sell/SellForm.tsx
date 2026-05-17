@@ -1,7 +1,75 @@
 "use client";
 import { useState, useEffect } from "react";
+import { useLanguage } from "@/lib/LanguageContext";
+
+const t = {
+  en: {
+    firstName: "First Name *",
+    lastName: "Last Name *",
+    email: "Email *",
+    phone: "Phone *",
+    address: "Property Address *",
+    addressPlaceholder: "123 Main St, Phoenix, AZ 85001",
+    condition: "Home Condition",
+    conditionOptions: [
+      { value: "", label: "Select one" },
+      { value: "good", label: "Good — move-in ready" },
+      { value: "fair", label: "Fair — needs some work" },
+      { value: "poor", label: "Poor — major repairs needed" },
+    ],
+    timeline: "Your Timeline",
+    timelineOptions: [
+      { value: "", label: "Select one" },
+      { value: "asap", label: "As soon as possible" },
+      { value: "1-3months", label: "1–3 months" },
+      { value: "3-6months", label: "3–6 months" },
+      { value: "flexible", label: "Flexible" },
+    ],
+    message: "Anything else we should know?",
+    messageOptional: "(optional)",
+    messagePlaceholder: "Tenant-occupied, estate sale, specific close date needed…",
+    submit: "Get My Cash Offer →",
+    submitting: "Submitting…",
+    footer: "No obligation · No fees · We respond within 24 hours",
+    successTitle: "Request Received",
+    successBody: "We'll review your property and follow up within 24 hours with your cash offer. Keep an eye on your email and phone.",
+  },
+  es: {
+    firstName: "Nombre *",
+    lastName: "Apellido *",
+    email: "Correo Electrónico *",
+    phone: "Teléfono *",
+    address: "Dirección de la Propiedad *",
+    addressPlaceholder: "123 Calle Principal, Phoenix, AZ 85001",
+    condition: "Condición de la Casa",
+    conditionOptions: [
+      { value: "", label: "Selecciona una opción" },
+      { value: "good", label: "Buena — lista para mudarse" },
+      { value: "fair", label: "Regular — necesita algo de trabajo" },
+      { value: "poor", label: "Pobre — necesita reparaciones mayores" },
+    ],
+    timeline: "Tu Plazo",
+    timelineOptions: [
+      { value: "", label: "Selecciona una opción" },
+      { value: "asap", label: "Lo antes posible" },
+      { value: "1-3months", label: "1–3 meses" },
+      { value: "3-6months", label: "3–6 meses" },
+      { value: "flexible", label: "Flexible" },
+    ],
+    message: "¿Algo más que debamos saber?",
+    messageOptional: "(opcional)",
+    messagePlaceholder: "Ocupada por inquilinos, venta de sucesión, fecha de cierre específica…",
+    submit: "Obtener Mi Oferta en Efectivo →",
+    submitting: "Enviando…",
+    footer: "Sin compromiso · Sin comisiones · Respondemos dentro de 24 horas",
+    successTitle: "Solicitud Recibida",
+    successBody: "Revisaremos tu propiedad y te enviaremos tu oferta en efectivo dentro de 24 horas. Mantén un ojo en tu correo electrónico y teléfono.",
+  },
+};
 
 export default function SellForm() {
+  const { lang } = useLanguage();
+  const c = t[lang];
   const [address, setAddress] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -17,13 +85,8 @@ export default function SellForm() {
     setLoading(true);
     const form = e.currentTarget;
     const data = Object.fromEntries(new FormData(form));
-
     try {
-      await fetch("/api/offer", {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: { "Content-Type": "application/json" },
-      });
+      await fetch("/api/offer", { method: "POST", body: JSON.stringify(data), headers: { "Content-Type": "application/json" } });
     } catch {
       // still show success
     } finally {
@@ -40,12 +103,8 @@ export default function SellForm() {
             <path d="M5 12l4.5 4.5L19 7" stroke="var(--blue)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </div>
-        <h2 style={{ fontFamily: "var(--font-display)", fontSize: "34px", color: "var(--black)", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "12px" }}>
-          Request Received
-        </h2>
-        <p style={{ fontSize: "14px", color: "var(--mid)", lineHeight: 1.8, maxWidth: "380px", margin: "0 auto" }}>
-          {"We'll"} review your property and follow up within 24 hours with your cash offer. Keep an eye on your email and phone.
-        </p>
+        <h2 style={{ fontFamily: "var(--font-display)", fontSize: "34px", color: "var(--black)", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "12px" }}>{c.successTitle}</h2>
+        <p style={{ fontSize: "14px", color: "var(--mid)", lineHeight: 1.8, maxWidth: "380px", margin: "0 auto" }}>{c.successBody}</p>
       </div>
     );
   }
@@ -54,89 +113,59 @@ export default function SellForm() {
     <form onSubmit={handleSubmit} style={{ background: "var(--white)", border: "1px solid var(--border-light)", borderRadius: "var(--radius)", padding: "40px" }}>
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px", marginBottom: "14px" }}>
         <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
-          <label className="form-label" htmlFor="firstName">First Name *</label>
+          <label className="form-label" htmlFor="firstName">{c.firstName}</label>
           <input id="firstName" name="firstName" type="text" required className="form-input" placeholder="Jane" />
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
-          <label className="form-label" htmlFor="lastName">Last Name *</label>
+          <label className="form-label" htmlFor="lastName">{c.lastName}</label>
           <input id="lastName" name="lastName" type="text" required className="form-input" placeholder="Smith" />
         </div>
       </div>
 
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px", marginBottom: "14px" }}>
         <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
-          <label className="form-label" htmlFor="email">Email *</label>
+          <label className="form-label" htmlFor="email">{c.email}</label>
           <input id="email" name="email" type="email" required className="form-input" placeholder="jane@email.com" />
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
-          <label className="form-label" htmlFor="phone">Phone *</label>
+          <label className="form-label" htmlFor="phone">{c.phone}</label>
           <input id="phone" name="phone" type="tel" required className="form-input" placeholder="(602) 555-0100" />
         </div>
       </div>
 
       <div style={{ display: "flex", flexDirection: "column", gap: "6px", marginBottom: "14px" }}>
-        <label className="form-label" htmlFor="address">Property Address *</label>
-        <input
-          id="address"
-          name="address"
-          type="text"
-          required
-          className="form-input"
-          placeholder="123 Main St, Phoenix, AZ 85001"
-          value={address}
-          onChange={(e) => setAddress(e.target.value)}
-        />
+        <label className="form-label" htmlFor="address">{c.address}</label>
+        <input id="address" name="address" type="text" required className="form-input" placeholder={c.addressPlaceholder} value={address} onChange={(e) => setAddress(e.target.value)} />
       </div>
 
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px", marginBottom: "14px" }}>
         <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
-          <label className="form-label" htmlFor="condition">Home Condition</label>
+          <label className="form-label" htmlFor="condition">{c.condition}</label>
           <select id="condition" name="condition" className="form-input">
-            <option value="">Select one</option>
-            <option value="good">Good — move-in ready</option>
-            <option value="fair">Fair — needs some work</option>
-            <option value="poor">Poor — major repairs needed</option>
+            {c.conditionOptions.map((o) => <option key={o.value} value={o.value}>{o.label}</option>)}
           </select>
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
-          <label className="form-label" htmlFor="timeline">Your Timeline</label>
+          <label className="form-label" htmlFor="timeline">{c.timeline}</label>
           <select id="timeline" name="timeline" className="form-input">
-            <option value="">Select one</option>
-            <option value="asap">As soon as possible</option>
-            <option value="1-3months">1–3 months</option>
-            <option value="3-6months">3–6 months</option>
-            <option value="flexible">Flexible</option>
+            {c.timelineOptions.map((o) => <option key={o.value} value={o.value}>{o.label}</option>)}
           </select>
         </div>
       </div>
 
       <div style={{ display: "flex", flexDirection: "column", gap: "6px", marginBottom: "28px" }}>
         <label className="form-label" htmlFor="message">
-          Anything else we should know?{" "}
-          <span style={{ color: "var(--muted)", fontWeight: 400, textTransform: "none", letterSpacing: 0, fontSize: "11px" }}>(optional)</span>
+          {c.message}{" "}
+          <span style={{ color: "var(--muted)", fontWeight: 400, textTransform: "none", letterSpacing: 0, fontSize: "11px" }}>{c.messageOptional}</span>
         </label>
-        <textarea
-          id="message"
-          name="message"
-          rows={3}
-          className="form-input"
-          placeholder="Tenant-occupied, estate sale, specific close date needed…"
-          style={{ resize: "vertical" }}
-        />
+        <textarea id="message" name="message" rows={3} className="form-input" placeholder={c.messagePlaceholder} style={{ resize: "vertical" }} />
       </div>
 
-      <button
-        type="submit"
-        disabled={loading}
-        className="btn-blue btn-blue-lg"
-        style={{ width: "100%", justifyContent: "center" }}
-      >
-        {loading ? "Submitting…" : "Get My Cash Offer →"}
+      <button type="submit" disabled={loading} className="btn-blue btn-blue-lg" style={{ width: "100%", justifyContent: "center" }}>
+        {loading ? c.submitting : c.submit}
       </button>
 
-      <p style={{ fontSize: "12px", color: "var(--muted)", textAlign: "center", marginTop: "14px" }}>
-        No obligation · No fees · We respond within 24 hours
-      </p>
+      <p style={{ fontSize: "12px", color: "var(--muted)", textAlign: "center", marginTop: "14px" }}>{c.footer}</p>
     </form>
   );
 }
