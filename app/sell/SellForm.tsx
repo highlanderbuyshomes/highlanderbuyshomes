@@ -1,6 +1,12 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useLanguage } from "@/lib/LanguageContext";
+
+declare global {
+  interface Window {
+    initGooglePlaces?: () => void;
+  }
+}
 
 const t = {
   en: {
@@ -67,17 +73,61 @@ const t = {
   },
 };
 
+const GOOGLE_MAPS_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
+
+function loadGooglePlaces(cb: () => void) {
+  if (typeof window === "undefined") return;
+  if (window.google?.maps?.places) { cb(); return; }
+  if (document.getElementById("google-places-script")) {
+    window.initGooglePlaces = cb;
+    return;
+  }
+  window.initGooglePlaces = cb;
+  const script = document.createElement("script");
+  script.id = "google-places-script";
+  script.src = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS_KEY}&libraries=places&callback=initGooglePlaces`;
+  script.async = true;
+  script.defer = true;
+  document.head.appendChild(script);
+}
+
 export default function SellForm() {
   const { lang } = useLanguage();
   const c = t[lang];
   const [address, setAddress] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const addressRef = useRef<HTMLInputElement>(null);
+  const autocompleteRef = useRef<google.maps.places.Autocomplete | null>(null);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const a = params.get("address");
     if (a) setAddress(a);
+  }, []);
+
+  useEffect(() => {
+    if (!GOOGLE_MAPS_KEY || !addressRef.current) return;
+
+    loadGooglePlaces(() => {
+      if (!addressRef.current || autocompleteRef.current) return;
+      autocompleteRef.current = new window.google.maps.places.Autocomplete(addressRef.current, {
+        types: ["address"],
+        componentRestrictions: { country: "us" },
+        fields: ["formatted_address"],
+      });
+      autocompleteRef.current.addListener("place_changed", () => {
+        const place = autocompleteRef.current!.getPlace();
+        if (place.formatted_address) setAddress(place.formatted_address);
+      });
+    });
+
+    return () => {
+      if (autocompleteRef.current) {
+        window.google?.maps?.event?.clearInstanceListeners(autocompleteRef.current);
+        autocompleteRef.current = null;
+      }
+    };
   }, []);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -135,7 +185,18 @@ export default function SellForm() {
 
       <div style={{ display: "flex", flexDirection: "column", gap: "6px", marginBottom: "14px" }}>
         <label className="form-label" htmlFor="address">{c.address}</label>
-        <input id="address" name="address" type="text" required className="form-input" placeholder={c.addressPlaceholder} value={address} onChange={(e) => setAddress(e.target.value)} />
+        <input
+          ref={addressRef}
+          id="address"
+          name="address"
+          type="text"
+          required
+          className="form-input"
+          placeholder={c.addressPlaceholder}
+          value={address}
+          onChange={(e) => setAddress(e.target.value)}
+          autoComplete="off"
+        />
       </div>
 
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px", marginBottom: "14px" }}>
