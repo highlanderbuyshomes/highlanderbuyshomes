@@ -26,7 +26,7 @@ export default function Nav() {
           <span style={{ fontFamily: "var(--font-display)", fontSize: "27px", color: "var(--blue)", lineHeight: "0.65", marginLeft: "2px" }}>.</span>
         </Link>
 
-        <div className="nav-links">
+        <div className="nav-center">
           {links.map((l) => (
             <Link
               key={l.href}
@@ -37,6 +37,9 @@ export default function Nav() {
               {l.label}
             </Link>
           ))}
+        </div>
+
+        <div className="nav-right">
           <Link href="/sell" className="btn-blue" style={{ padding: "9px 20px", fontSize: "13px" }}>
             Get My Offer
           </Link>
