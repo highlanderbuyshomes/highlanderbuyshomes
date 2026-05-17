@@ -2,16 +2,25 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import LangToggle from "@/components/LangToggle";
+import { useLanguage } from "@/lib/LanguageContext";
 
 export default function Nav() {
   const pathname = usePathname();
+  const { lang } = useLanguage();
   const [open, setOpen] = useState(false);
 
-  const links = [
-    { href: "/how-it-works", label: "Cash Offer" },
-    { href: "/for-agents", label: "For Agents" },
-    { href: "/about", label: "About" },
-  ];
+  const links = lang === "es"
+    ? [
+        { href: "/how-it-works", label: "Oferta en Efectivo" },
+        { href: "/for-agents", label: "Para Agentes" },
+        { href: "/about", label: "Nosotros" },
+      ]
+    : [
+        { href: "/how-it-works", label: "Cash Offer" },
+        { href: "/for-agents", label: "For Agents" },
+        { href: "/about", label: "About" },
+      ];
 
   return (
     <>
@@ -39,9 +48,10 @@ export default function Nav() {
           ))}
         </div>
 
-        <div className="nav-right">
+        <div className="nav-right" style={{ gap: "12px" }}>
+          <LangToggle />
           <Link href="/sell" className="btn-blue" style={{ padding: "9px 20px", fontSize: "13px" }}>
-            Get My Offer
+            {lang === "es" ? "Obtener Mi Oferta" : "Get My Offer"}
           </Link>
         </div>
 
@@ -75,8 +85,11 @@ export default function Nav() {
               {l.label}
             </Link>
           ))}
+          <div style={{ marginTop: "16px", display: "flex", justifyContent: "center" }}>
+            <LangToggle />
+          </div>
           <Link href="/sell" onClick={() => setOpen(false)} className="btn-blue" style={{ marginTop: "12px", width: "100%", justifyContent: "center", padding: "13px" }}>
-            Get My Offer
+            {lang === "es" ? "Obtener Mi Oferta" : "Get My Offer"}
           </Link>
         </div>
       )}
