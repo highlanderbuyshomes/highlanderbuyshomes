@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://highlanderbuyshomes.com/vender-mi-casa-rapido",
     languages: {
-      "en-US": "https://highlanderbuyshomes.com/how-it-works",
+      "en-US": "https://highlanderbuyshomes.com/cash-offer",
       "es-US": "https://highlanderbuyshomes.com/vender-mi-casa-rapido",
     },
   },

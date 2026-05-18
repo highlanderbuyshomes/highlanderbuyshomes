@@ -130,12 +130,32 @@ const t = {
   },
 };
 
+const enFaqs = [
+  { q: "How do you determine my cash offer?", a: "We analyze recent comparable sales in your area, current market conditions, and your property's condition to arrive at a fair offer. Our goal is to give you a real number — one that reflects the value of your home without the cost and time of repairs and listing." },
+  { q: "Are there any fees or commissions?", a: "No. There are no agent commissions and no hidden fees. We cover standard closing costs. The number we offer is the number you receive." },
+  { q: "What if my house needs major repairs?", a: "We buy houses as-is — including homes with foundation issues, roof damage, outdated electrical, fire or water damage, and more. The condition of your home doesn't affect our ability to close." },
+  { q: "How fast can you actually close?", a: "In some cases we can close in 7 days. Most transactions close in 14–21 days. The timeline depends on clear title and your schedule." },
+  { q: "Do I need to clean out the house?", a: "No. Leave whatever you can't take. We handle the cleanout after closing." },
+  { q: "Which areas do you buy in?", a: "We buy in the Phoenix, AZ metro (Scottsdale, Mesa, Tempe, Chandler, Gilbert, Glendale, and surrounding areas) and the Dallas–Fort Worth, TX metroplex." },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": enFaqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+
 export default function CashOfferPage() {
   const { lang } = useLanguage();
   const c = t[lang];
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       {/* ── HEADER ───────────────────────────────────────────── */}
       <section style={{ background: "var(--black)", position: "relative", overflow: "hidden" }}>
         <div style={{ position: "absolute", inset: 0, backgroundImage: "repeating-linear-gradient(0deg,transparent,transparent 59px,rgba(255,255,255,0.012) 59px,rgba(255,255,255,0.012) 60px),repeating-linear-gradient(90deg,transparent,transparent 59px,rgba(255,255,255,0.012) 59px,rgba(255,255,255,0.012) 60px)" }} />
