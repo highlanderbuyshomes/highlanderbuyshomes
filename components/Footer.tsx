@@ -33,6 +33,19 @@ export default function Footer() {
           </div>
 
           <div>
+            <div style={{ fontSize: "10px", color: "rgba(255,255,255,0.3)", textTransform: "uppercase", letterSpacing: "1.2px", marginBottom: "14px" }}>Brands</div>
+            <div style={{ marginBottom: "10px" }}>
+              <a href="https://highlanderrei.com" style={{ fontSize: "13px", color: "rgba(255,255,255,0.5)", textDecoration: "none" }}>Highlander REI</a>
+            </div>
+            <div style={{ marginBottom: "10px" }}>
+              <a href="https://highlanderbuyshomes.com" style={{ fontSize: "13px", color: "rgba(255,255,255,0.5)", textDecoration: "none" }}>Highlander Buys Homes</a>
+            </div>
+            <div style={{ marginBottom: "10px" }}>
+              <a href="https://flipwithhighlander.com" style={{ fontSize: "13px", color: "rgba(255,255,255,0.5)", textDecoration: "none" }}>Flip With Highlander</a>
+            </div>
+          </div>
+
+          <div>
             <div style={{ fontSize: "10px", color: "rgba(255,255,255,0.3)", textTransform: "uppercase", letterSpacing: "1.2px", marginBottom: "14px" }}>Markets</div>
             <div style={{ fontSize: "13px", color: "rgba(255,255,255,0.5)", marginBottom: "10px" }}>Phoenix, AZ</div>
             <div style={{ fontSize: "13px", color: "rgba(255,255,255,0.5)", marginBottom: "10px" }}>Dallas, TX</div>
