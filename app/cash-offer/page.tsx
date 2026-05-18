@@ -316,6 +316,65 @@ export default function CashOfferPage() {
         </div>
       </section>
 
+      {/* ── SERVICE AREAS ────────────────────────────────────── */}
+      {lang === "en" && (
+        <section style={{ background: "var(--off-white)", borderTop: "1px solid var(--border-light)" }}>
+          <div className="section">
+            <div style={{ textAlign: "center", marginBottom: "40px" }}>
+              <span className="section-label">Service Areas</span>
+              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(28px, 4vw, 44px)", color: "var(--black)", letterSpacing: "2px", textTransform: "uppercase", lineHeight: 1 }}>
+                Cities We Buy In
+              </h2>
+            </div>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "32px", maxWidth: "860px", margin: "0 auto" }}>
+              {[
+                { metro: "Phoenix, Arizona", cities: [
+                  { name: "Phoenix",   slug: "phoenix-az" },
+                  { name: "Scottsdale", slug: "scottsdale-az" },
+                  { name: "Mesa",      slug: "mesa-az" },
+                  { name: "Chandler",  slug: "chandler-az" },
+                  { name: "Gilbert",   slug: "gilbert-az" },
+                  { name: "Glendale",  slug: "glendale-az" },
+                  { name: "Tempe",     slug: "tempe-az" },
+                  { name: "Peoria",    slug: "peoria-az" },
+                  { name: "Avondale",  slug: "avondale-az" },
+                  { name: "Surprise",  slug: "surprise-az" },
+                  { name: "Goodyear",  slug: "goodyear-az" },
+                ]},
+                { metro: "Dallas, Texas", cities: [
+                  { name: "Dallas",     slug: "dallas-tx" },
+                  { name: "Fort Worth", slug: "fort-worth-tx" },
+                  { name: "Arlington",  slug: "arlington-tx" },
+                  { name: "Garland",   slug: "garland-tx" },
+                  { name: "Irving",    slug: "irving-tx" },
+                  { name: "Plano",     slug: "plano-tx" },
+                  { name: "Frisco",    slug: "frisco-tx" },
+                  { name: "McKinney",  slug: "mckinney-tx" },
+                  { name: "Mesquite",  slug: "mesquite-tx" },
+                  { name: "Denton",    slug: "denton-tx" },
+                  { name: "Carrollton", slug: "carrollton-tx" },
+                ]},
+              ].map((market) => (
+                <div key={market.metro} style={{ background: "var(--white)", border: "1px solid var(--border-light)", borderRadius: "var(--radius)", padding: "24px 22px" }}>
+                  <div style={{ fontFamily: "var(--font-display)", fontSize: "16px", color: "var(--black)", letterSpacing: "1px", marginBottom: "16px", textTransform: "uppercase" }}>{market.metro}</div>
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
+                    {market.cities.map((c) => (
+                      <Link
+                        key={c.slug}
+                        href={`/we-buy-houses/${c.slug}`}
+                        style={{ fontSize: "12px", color: "var(--blue)", textDecoration: "none", background: "var(--blue-light)", border: "1px solid var(--blue-border)", borderRadius: "6px", padding: "4px 10px", fontWeight: 500 }}
+                      >
+                        {c.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* ── CTA ──────────────────────────────────────────────── */}
       <section style={{ background: "var(--black)" }}>
         <div className="section" style={{ textAlign: "center" }}>

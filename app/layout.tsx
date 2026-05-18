@@ -17,9 +17,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Highlander Buys Homes — Cash Offers in Phoenix & Dallas",
+  title: "Sell My House Fast Phoenix AZ & Dallas TX | Cash Offers in 24 Hours",
   description:
-    "Get a competitive cash offer on your home in Phoenix, AZ or Dallas, TX. No repairs, no showings, no agent fees. We close in as little as 14 days.",
+    "Get a fair cash offer for your Phoenix AZ or Dallas TX home in 24 hours. No repairs, no showings, no agent fees. We close in as little as 7 days — entirely on your schedule.",
   alternates: {
     canonical: "https://highlanderbuyshomes.com",
     languages: {
@@ -29,9 +29,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Highlander Buys Homes",
+    title: "Sell My House Fast | Cash Offers in Phoenix & Dallas",
     description:
-      "Cash offers on homes in Phoenix & Dallas. No repairs, no fees, close on your timeline.",
+      "Cash offers on homes in Phoenix AZ & Dallas TX in 24 hours. No repairs, no fees, close on your timeline.",
     url: "https://highlanderbuyshomes.com",
     siteName: "Highlander Buys Homes",
     locale: "en_US",
@@ -43,25 +43,44 @@ const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "RealEstateAgent",
   "name": "Highlander Buys Homes",
+  "alternateName": "Highlander REI",
   "url": "https://highlanderbuyshomes.com",
   "logo": "https://highlanderbuyshomes.com/logo.png",
-  "description": "We buy homes directly from homeowners in Phoenix, AZ and Dallas, TX. Fast closings, fair cash offers, no repairs or agent fees.",
+  "description": "We buy homes directly from homeowners in Phoenix AZ and Dallas TX. Fair cash offers in 24 hours, close in as little as 7 days. No repairs, no commissions, no fees.",
+  "knowsLanguage": ["en", "es"],
+  "serviceType": "Cash Home Buyer",
+  "priceRange": "$$",
+  "openingHours": "Mo-Fr 08:00-18:00",
   "areaServed": [
-    { "@type": "City", "name": "Phoenix", "containedIn": { "@type": "State", "name": "Arizona" } },
+    { "@type": "City", "name": "Phoenix",    "containedIn": { "@type": "State", "name": "Arizona" } },
     { "@type": "City", "name": "Scottsdale", "containedIn": { "@type": "State", "name": "Arizona" } },
-    { "@type": "City", "name": "Mesa", "containedIn": { "@type": "State", "name": "Arizona" } },
-    { "@type": "City", "name": "Chandler", "containedIn": { "@type": "State", "name": "Arizona" } },
-    { "@type": "City", "name": "Gilbert", "containedIn": { "@type": "State", "name": "Arizona" } },
-    { "@type": "City", "name": "Tempe", "containedIn": { "@type": "State", "name": "Arizona" } },
-    { "@type": "City", "name": "Dallas", "containedIn": { "@type": "State", "name": "Texas" } },
+    { "@type": "City", "name": "Mesa",       "containedIn": { "@type": "State", "name": "Arizona" } },
+    { "@type": "City", "name": "Chandler",   "containedIn": { "@type": "State", "name": "Arizona" } },
+    { "@type": "City", "name": "Gilbert",    "containedIn": { "@type": "State", "name": "Arizona" } },
+    { "@type": "City", "name": "Glendale",   "containedIn": { "@type": "State", "name": "Arizona" } },
+    { "@type": "City", "name": "Tempe",      "containedIn": { "@type": "State", "name": "Arizona" } },
+    { "@type": "City", "name": "Peoria",     "containedIn": { "@type": "State", "name": "Arizona" } },
+    { "@type": "City", "name": "Surprise",   "containedIn": { "@type": "State", "name": "Arizona" } },
+    { "@type": "City", "name": "Goodyear",   "containedIn": { "@type": "State", "name": "Arizona" } },
+    { "@type": "City", "name": "Dallas",     "containedIn": { "@type": "State", "name": "Texas" } },
     { "@type": "City", "name": "Fort Worth", "containedIn": { "@type": "State", "name": "Texas" } },
-    { "@type": "City", "name": "Plano", "containedIn": { "@type": "State", "name": "Texas" } },
-    { "@type": "City", "name": "Frisco", "containedIn": { "@type": "State", "name": "Texas" } },
+    { "@type": "City", "name": "Plano",      "containedIn": { "@type": "State", "name": "Texas" } },
+    { "@type": "City", "name": "Frisco",     "containedIn": { "@type": "State", "name": "Texas" } },
+    { "@type": "City", "name": "Arlington",  "containedIn": { "@type": "State", "name": "Texas" } },
+    { "@type": "City", "name": "Irving",     "containedIn": { "@type": "State", "name": "Texas" } },
+    { "@type": "City", "name": "McKinney",   "containedIn": { "@type": "State", "name": "Texas" } },
+    { "@type": "City", "name": "Garland",    "containedIn": { "@type": "State", "name": "Texas" } },
   ],
   "sameAs": [
     "https://highlanderrei.com",
     "https://flipwithhighlander.com",
   ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer service",
+    "availableLanguage": ["English", "Spanish"],
+    "email": "invest@highlanderrei.com",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
