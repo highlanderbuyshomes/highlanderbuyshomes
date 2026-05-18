@@ -22,7 +22,7 @@ export default function Footer() {
           <div>
             <div style={{ fontSize: "10px", color: "rgba(255,255,255,0.3)", textTransform: "uppercase", letterSpacing: "1.2px", marginBottom: "14px" }}>Company</div>
             {[
-              { href: "/how-it-works", label: "How It Works" },
+              { href: "/cash-offer", label: "Cash Offer" },
               { href: "/about", label: "About Us" },
               { href: "/for-agents", label: "For Agents" },
             ].map((l) => (

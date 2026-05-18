@@ -177,7 +177,7 @@ export default function HomePage() {
             ))}
           </div>
           <div style={{ textAlign: "center", marginTop: "40px" }}>
-            <Link href="/how-it-works" style={{ fontSize: "14px", color: "var(--blue)", textDecoration: "none", fontWeight: 500 }}>{c.fullProcess}</Link>
+            <Link href="/cash-offer" style={{ fontSize: "14px", color: "var(--blue)", textDecoration: "none", fontWeight: 500 }}>{c.fullProcess}</Link>
           </div>
         </div>
       </section>

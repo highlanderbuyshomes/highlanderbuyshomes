@@ -12,12 +12,12 @@ export default function Nav() {
 
   const links = lang === "es"
     ? [
-        { href: "/how-it-works", label: "Oferta en Efectivo" },
+        { href: "/cash-offer", label: "Oferta en Efectivo" },
         { href: "/for-agents", label: "Para Agentes" },
         { href: "/about", label: "Nosotros" },
       ]
     : [
-        { href: "/how-it-works", label: "Cash Offer" },
+        { href: "/cash-offer", label: "Cash Offer" },
         { href: "/for-agents", label: "For Agents" },
         { href: "/about", label: "About" },
       ];
