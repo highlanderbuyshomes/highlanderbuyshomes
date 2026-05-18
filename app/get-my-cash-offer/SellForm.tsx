@@ -147,21 +147,22 @@ export default function SellForm() {
 
   if (submitted) {
     return (
-      <div style={{ background: "var(--white)", border: "1px solid var(--border-light)", borderRadius: "var(--radius)", padding: "52px 40px", textAlign: "center" }}>
+      <div className="form-success-card" style={{ background: "var(--white)", border: "1px solid var(--border-light)", borderRadius: "var(--radius)", textAlign: "center" }}>
         <div style={{ width: "60px", height: "60px", borderRadius: "50%", background: "var(--blue-light)", border: "2px solid var(--blue-border)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 22px" }}>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
             <path d="M5 12l4.5 4.5L19 7" stroke="var(--blue)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </div>
         <h2 style={{ fontFamily: "var(--font-display)", fontSize: "34px", color: "var(--black)", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "12px" }}>{c.successTitle}</h2>
-        <p style={{ fontSize: "14px", color: "var(--mid)", lineHeight: 1.8, maxWidth: "380px", margin: "0 auto" }}>{c.successBody}</p>
+        <p style={{ fontSize: "14px", color: "var(--mid)", lineHeight: 1.8, maxWidth: "340px", margin: "0 auto" }}>{c.successBody}</p>
       </div>
     );
   }
 
   return (
     <form onSubmit={handleSubmit} style={{ background: "var(--white)", border: "1px solid var(--border-light)", borderRadius: "var(--radius)", padding: "40px" }}>
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px", marginBottom: "14px" }}>
+
+      <div className="form-row-2">
         <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
           <label className="form-label" htmlFor="firstName">{c.firstName}</label>
           <input id="firstName" name="firstName" type="text" required className="form-input" placeholder="Jane" />
@@ -172,7 +173,7 @@ export default function SellForm() {
         </div>
       </div>
 
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px", marginBottom: "14px" }}>
+      <div className="form-row-2">
         <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
           <label className="form-label" htmlFor="email">{c.email}</label>
           <input id="email" name="email" type="email" required className="form-input" placeholder="jane@email.com" />
@@ -199,7 +200,7 @@ export default function SellForm() {
         />
       </div>
 
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px", marginBottom: "14px" }}>
+      <div className="form-row-2">
         <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
           <label className="form-label" htmlFor="condition">{c.condition}</label>
           <select id="condition" name="condition" className="form-input">

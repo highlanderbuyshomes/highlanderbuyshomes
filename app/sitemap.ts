@@ -24,7 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: BASE,                                    lastModified: now, changeFrequency: "weekly",  priority: 1.0 },
     { url: `${BASE}/cash-offer`,                    lastModified: now, changeFrequency: "weekly",  priority: 0.9 },
     { url: `${BASE}/vender-mi-casa-rapido`,         lastModified: now, changeFrequency: "weekly",  priority: 0.9 },
-    { url: `${BASE}/sell`,                          lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/get-my-cash-offer`,              lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE}/for-agents`,                    lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/about`,                         lastModified: now, changeFrequency: "monthly", priority: 0.6 },
   ];

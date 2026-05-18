@@ -138,7 +138,7 @@ export default function AboutPage() {
         <div className="section" style={{ textAlign: "center" }}>
           <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(36px, 5vw, 60px)", color: "var(--black)", letterSpacing: "2px", textTransform: "uppercase", lineHeight: 1, marginBottom: "16px" }}>{c.ctaH2}</h2>
           <p style={{ fontSize: "15px", color: "var(--mid)", maxWidth: "400px", margin: "0 auto 32px", lineHeight: 1.75 }}>{c.ctaSub}</p>
-          <Link href="/sell" className="btn-blue btn-blue-lg">{c.ctaBtn}</Link>
+          <Link href="/get-my-cash-offer" className="btn-blue btn-blue-lg">{c.ctaBtn}</Link>
         </div>
       </section>
     </>

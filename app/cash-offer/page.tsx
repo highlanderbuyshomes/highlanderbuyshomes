@@ -175,7 +175,7 @@ export default function CashOfferPage() {
               </div>
             ))}
           </div>
-          <Link href="/sell" className="btn-blue" style={{ padding: "15px 32px", fontSize: "15px" }}>
+          <Link href="/get-my-cash-offer" className="btn-blue" style={{ padding: "15px 32px", fontSize: "15px" }}>
             {c.ctaBtn}
           </Link>
         </div>

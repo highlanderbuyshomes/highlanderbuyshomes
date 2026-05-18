@@ -204,7 +204,7 @@ export default function HomePage() {
             ))}
           </div>
           <div style={{ textAlign: "center", marginTop: "40px" }}>
-            <Link href="/sell" className="btn-blue btn-blue-lg">{c.getCta}</Link>
+            <Link href="/get-my-cash-offer" className="btn-blue btn-blue-lg">{c.getCta}</Link>
           </div>
         </div>
       </section>
@@ -252,7 +252,7 @@ export default function HomePage() {
                 </div>
                 <p style={{ fontSize: "11px", color: "var(--muted)", textTransform: "uppercase", letterSpacing: "0.8px", marginBottom: "16px" }}>{m.sub}</p>
                 <p style={{ fontSize: "13.5px", color: "var(--mid)", lineHeight: 1.8, marginBottom: "20px" }}>{m.body}</p>
-                <Link href="/sell" style={{ display: "inline-flex", alignItems: "center", gap: "5px", fontSize: "13px", color: "var(--blue)", textDecoration: "none", fontWeight: 600 }}>{m.cta}</Link>
+                <Link href="/get-my-cash-offer" style={{ display: "inline-flex", alignItems: "center", gap: "5px", fontSize: "13px", color: "var(--blue)", textDecoration: "none", fontWeight: 600 }}>{m.cta}</Link>
               </div>
             ))}
           </div>

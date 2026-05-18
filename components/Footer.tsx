@@ -53,7 +53,7 @@ export default function Footer() {
 
           <div>
             <div style={{ fontSize: "10px", color: "rgba(255,255,255,0.3)", textTransform: "uppercase", letterSpacing: "1.2px", marginBottom: "14px" }}>Get Started</div>
-            <Link href="/sell" style={{ fontSize: "13px", color: "var(--blue)", textDecoration: "none", fontWeight: 600 }}>
+            <Link href="/get-my-cash-offer" style={{ fontSize: "13px", color: "var(--blue)", textDecoration: "none", fontWeight: 600 }}>
               Get My Cash Offer →
             </Link>
             <div style={{ marginTop: "10px" }}>

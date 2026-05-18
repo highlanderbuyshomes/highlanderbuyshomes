@@ -50,7 +50,7 @@ export default function Nav() {
 
         <div className="nav-right" style={{ gap: "12px" }}>
           <LangToggle />
-          <Link href="/sell" className="btn-blue" style={{ padding: "9px 20px", fontSize: "13px" }}>
+          <Link href="/get-my-cash-offer" className="btn-blue" style={{ padding: "9px 20px", fontSize: "13px" }}>
             {lang === "es" ? "Obtener Mi Oferta" : "Get My Offer"}
           </Link>
         </div>
@@ -88,7 +88,7 @@ export default function Nav() {
           <div style={{ marginTop: "16px", display: "flex", justifyContent: "center" }}>
             <LangToggle />
           </div>
-          <Link href="/sell" onClick={() => setOpen(false)} className="btn-blue" style={{ marginTop: "12px", width: "100%", justifyContent: "center", padding: "13px" }}>
+          <Link href="/get-my-cash-offer" onClick={() => setOpen(false)} className="btn-blue" style={{ marginTop: "12px", width: "100%", justifyContent: "center", padding: "13px" }}>
             {lang === "es" ? "Obtener Mi Oferta" : "Get My Offer"}
           </Link>
         </div>
