@@ -13,11 +13,23 @@ const t = {
     sub: "No repairs. No showings. No agent fees. Close in as little as 14 days — entirely on your schedule.",
     checks: ["Free offer", "No obligation", "Offer in 24 hours", "All-cash closing"],
     stats: [
-      { val: "24 hrs", label: "Offer turnaround" },
-      { val: "14 days", label: "Minimum close time" },
-      { val: "PHX + DFW", label: "Active markets" },
-      { val: "$0", label: "Agent commissions" },
+      { val: "50+", label: "Homes Purchased" },
+      { val: "24 hrs", label: "Offer Turnaround" },
+      { val: "14 days", label: "Minimum Close" },
+      { val: "$0", label: "Agent Commissions" },
     ],
+    situations: {
+      label: "We Buy In Any Situation",
+      h2: "WE HELP HOMEOWNERS FACING:",
+      items: [
+        { icon: "⚡", title: "Foreclosure", body: "Stop the process before it damages your credit. We move fast — sometimes closing in under 2 weeks." },
+        { icon: "📋", title: "Inherited Property", body: "Don't pay taxes and maintenance on a home you didn't plan for. We make it simple." },
+        { icon: "💔", title: "Divorce", body: "A quick, clean sale removes the stress of a shared asset so both parties can move on." },
+        { icon: "📦", title: "Relocation", body: "Moving for work or life? Sell without the waiting game of a traditional listing." },
+        { icon: "💳", title: "Behind on Payments", body: "Get out from under a mortgage that no longer works before it becomes a larger problem." },
+        { icon: "🔑", title: "Problem Tenants", body: "Done being a landlord? We buy rental properties as-is — tenants and all." },
+      ],
+    },
     processLabel: "The Process",
     processH2: "Three Steps to Sold",
     steps: [
@@ -38,6 +50,30 @@ const t = {
       { label: "Agent commissions", traditional: "5–6%", highlander: "$0" },
     ],
     getCta: "Get My Cash Offer",
+    testimonials: {
+      label: "Homeowner Stories",
+      h2: "REAL SELLERS. REAL RESULTS.",
+      items: [
+        {
+          quote: "I needed to sell fast after a divorce. Highlander gave me a fair offer the next day and we closed in 10 days. No drama, no delays — exactly what I needed.",
+          name: "Maria T.",
+          location: "Phoenix, AZ",
+          situation: "Divorce",
+        },
+        {
+          quote: "I inherited my parents' house and had no idea what to do. They walked me through every step and made it completely painless. Got a fair price with zero hassle.",
+          name: "James R.",
+          location: "Dallas, TX",
+          situation: "Inherited Home",
+        },
+        {
+          quote: "Was facing foreclosure with 3 weeks left. They came through with a cash offer and saved my credit. I'm genuinely grateful for how fast and professional they were.",
+          name: "Sandra K.",
+          location: "Phoenix, AZ",
+          situation: "Foreclosure",
+        },
+      ],
+    },
     agentLabel: "Agent Program",
     agentH2: ["Are You an Agent", "or Wholesaler?"],
     agentBody: "We work directly with real estate agents and wholesalers. Full commission paid, reliable all-cash closings in as little as 14 days.",
@@ -65,11 +101,23 @@ const t = {
     sub: "Sin reparaciones. Sin visitas. Sin comisiones. Cierra en tan solo 14 días — a tu ritmo.",
     checks: ["Oferta gratis", "Sin obligación", "Oferta en 24 horas", "Cierre garantizado"],
     stats: [
-      { val: "24 hrs", label: "Tiempo de respuesta" },
-      { val: "14 días", label: "Tiempo mínimo de cierre" },
-      { val: "PHX + DFW", label: "Mercados activos" },
-      { val: "$0", label: "Comisiones de agente" },
+      { val: "50+", label: "Casas Compradas" },
+      { val: "24 hrs", label: "Tiempo de Respuesta" },
+      { val: "14 días", label: "Cierre Mínimo" },
+      { val: "$0", label: "Comisiones" },
     ],
+    situations: {
+      label: "Compramos en Cualquier Situación",
+      h2: "AYUDAMOS A PROPIETARIOS EN:",
+      items: [
+        { icon: "⚡", title: "Ejecución Hipotecaria", body: "Detén el proceso antes de que dañe tu crédito. Actuamos rápido — a veces cerramos en menos de 2 semanas." },
+        { icon: "📋", title: "Propiedad Heredada", body: "No pagues impuestos y mantenimiento de una casa que no planeabas tener. Lo hacemos simple." },
+        { icon: "💔", title: "Divorcio", body: "Una venta rápida elimina el estrés de un activo compartido para que ambas partes puedan seguir adelante." },
+        { icon: "📦", title: "Reubicación", body: "¿Mudándote? Vende sin esperar meses en el mercado tradicional." },
+        { icon: "💳", title: "Pagos Atrasados", body: "Libérate de una hipoteca que ya no funciona antes de que se convierta en un problema mayor." },
+        { icon: "🔑", title: "Inquilinos Problemáticos", body: "¿Cansado de ser arrendador? Compramos propiedades de alquiler tal como están." },
+      ],
+    },
     processLabel: "El Proceso",
     processH2: "Tres Pasos Para Vender",
     steps: [
@@ -90,6 +138,30 @@ const t = {
       { label: "Comisión de agente", traditional: "5–6%", highlander: "$0" },
     ],
     getCta: "Obtener Mi Oferta",
+    testimonials: {
+      label: "Historias de Propietarios",
+      h2: "VENDEDORES REALES. RESULTADOS REALES.",
+      items: [
+        {
+          quote: "Necesitaba vender rápido después de un divorcio. Me dieron una oferta justa al día siguiente y cerramos en 10 días. Sin drama, sin retrasos.",
+          name: "Maria T.",
+          location: "Phoenix, AZ",
+          situation: "Divorcio",
+        },
+        {
+          quote: "Heredé la casa de mis padres y no sabía qué hacer. Me guiaron en cada paso y fue completamente sin complicaciones. Obtuve un precio justo sin esfuerzo.",
+          name: "James R.",
+          location: "Dallas, TX",
+          situation: "Casa Heredada",
+        },
+        {
+          quote: "Enfrentaba ejecución hipotecaria con 3 semanas de margen. Vinieron con una oferta y salvaron mi crédito. Estoy genuinamente agradecida por lo rápido y profesionales que fueron.",
+          name: "Sandra K.",
+          location: "Phoenix, AZ",
+          situation: "Ejecución Hipotecaria",
+        },
+      ],
+    },
     agentLabel: "Programa para Agentes",
     agentH2: ["¿Eres Agente", "o Mayorista?"],
     agentBody: "Trabajamos directamente con agentes inmobiliarios y mayoristas. Comisión completa pagada, cierres garantizados en efectivo en tan solo 14 días.",
@@ -97,7 +169,7 @@ const t = {
     agentItems: [
       { n: "01", title: "Comisión Completa", body: "Nunca reducimos tu comisión. Tú traes el trato, nosotros manejamos el resto." },
       { n: "02", title: "Cierres Garantizados", body: "Sin contingencias de financiamiento. El efectivo garantiza que el trato se cierra." },
-      { n: "03", title: "Cierre Rápido", body: "Cerramos en 14–21 días. Clientes satisfechos refieren más clientes — se multiplica." },
+      { n: "03", title: "Cierre Rápido", body: "Cerramos en 14–21 días. Clientes satisfechos refieren más clientes." },
     ],
     marketsLabel: "Dónde Compramos",
     marketsH2: "Nuestros Mercados",
@@ -117,26 +189,121 @@ export default function HomePage() {
 
   return (
     <>
+      <style>{`
+        .hero-wrap {
+          background: var(--near-black);
+          padding: 80px 24px 80px;
+          text-align: center;
+        }
+        .hero-form-wrap {
+          max-width: 600px;
+          margin: 0 auto;
+        }
+        .stats-bar {
+          background: var(--off-white);
+          border-top: 1px solid var(--border-light);
+          border-bottom: 1px solid var(--border-light);
+        }
+        .stats-bar-inner {
+          max-width: 1160px;
+          margin: 0 auto;
+          padding: 0 48px;
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+        }
+        .stat-cell {
+          padding: 28px 16px;
+          text-align: center;
+          border-right: 1px solid var(--border-light);
+        }
+        .stat-cell:last-child { border-right: none; }
+        .situations-wrap {
+          background: var(--black);
+          padding: 88px 48px;
+        }
+        .situations-grid {
+          max-width: 960px;
+          margin: 48px auto 0;
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 16px;
+        }
+        .situation-card {
+          background: rgba(255,255,255,0.05);
+          border: 1px solid rgba(255,255,255,0.09);
+          border-radius: var(--radius-sm);
+          padding: 22px 20px;
+          transition: background 0.15s;
+        }
+        .situation-card:hover { background: rgba(255,255,255,0.08); }
+        .testimonials-wrap {
+          background: var(--off-white);
+          padding: 88px 48px;
+          border-top: 1px solid var(--border-light);
+        }
+        .testimonials-grid {
+          max-width: 960px;
+          margin: 48px auto 0;
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 20px;
+        }
+        .testimonial-card {
+          background: var(--white);
+          border: 1px solid var(--border-light);
+          border-radius: var(--radius);
+          padding: 28px 24px;
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+        }
+        @media (max-width: 900px) {
+          .hero-wrap { padding: 56px 20px 60px; }
+          .stats-bar-inner { padding: 0 20px; grid-template-columns: repeat(2, 1fr); }
+          .stat-cell { border-right: none; border-bottom: 1px solid var(--border-light); }
+          .stat-cell:nth-child(odd) { border-right: 1px solid var(--border-light); }
+          .stat-cell:last-child { border-bottom: none; }
+          .stat-cell:nth-last-child(2):nth-child(odd) { border-bottom: none; }
+          .situations-wrap { padding: 60px 20px; }
+          .situations-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+          .testimonials-wrap { padding: 60px 20px; }
+          .testimonials-grid { grid-template-columns: 1fr; gap: 16px; }
+        }
+        @media (max-width: 600px) {
+          .hero-wrap { padding: 44px 16px 52px; }
+          .stats-bar-inner { grid-template-columns: repeat(2, 1fr); padding: 0 16px; }
+          .situations-grid { grid-template-columns: 1fr; }
+          .situations-wrap { padding: 48px 16px; }
+          .testimonials-wrap { padding: 48px 16px; }
+        }
+      `}</style>
+
       {/* ── HERO ──────────────────────────────────────────────── */}
-      <section style={{ background: "var(--white)", paddingTop: "80px", paddingBottom: "88px" }}>
-        <div style={{ maxWidth: "760px", margin: "0 auto", padding: "0 48px", textAlign: "center" }}>
-          <div style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "var(--blue-light)", border: "1px solid var(--blue-border)", borderRadius: "20px", padding: "5px 14px", marginBottom: "28px" }}>
-            <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "var(--blue)", flexShrink: 0, display: "inline-block" }} />
-            <span style={{ fontSize: "11px", color: "var(--blue)", letterSpacing: "0.8px", fontWeight: 600 }}>{c.badge}</span>
+      <section className="hero-wrap">
+        <div className="hero-form-wrap">
+          <div style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.14)", borderRadius: "20px", padding: "5px 14px", marginBottom: "28px" }}>
+            <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#4ade80", flexShrink: 0, display: "inline-block" }} />
+            <span style={{ fontSize: "11px", color: "rgba(255,255,255,0.6)", letterSpacing: "0.8px", fontWeight: 500 }}>{c.badge}</span>
           </div>
-          <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(52px, 9vw, 104px)", color: "var(--black)", letterSpacing: "2px", lineHeight: 0.92, marginBottom: "24px", textTransform: "uppercase" }}>
+
+          <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(48px, 10vw, 104px)", color: "var(--white)", letterSpacing: "2px", lineHeight: 0.92, marginBottom: "22px", textTransform: "uppercase" }}>
             {c.h1a}<br />
-            <span style={{ color: "var(--blue)" }}>{lang === "en" ? "OFFER" : "OFERTA"}</span> {lang === "en" ? "ON" : "EN"}<br />
+            <span style={{ color: "var(--blue-mid)" }}>{lang === "en" ? "OFFER" : "OFERTA"}</span>{" "}{lang === "en" ? "ON" : "EN"}<br />
             {c.h1c}
           </h1>
-          <p style={{ fontSize: "18px", color: "var(--mid)", maxWidth: "500px", margin: "0 auto 40px", lineHeight: 1.75, fontWeight: 300 }}>{c.sub}</p>
+
+          <p style={{ fontSize: "clamp(14px, 2.5vw, 17px)", color: "rgba(255,255,255,0.55)", maxWidth: "480px", margin: "0 auto 36px", lineHeight: 1.75, fontWeight: 300 }}>
+            {c.sub}
+          </p>
+
           {lang === "es" ? <OfferFormEs /> : <OfferForm />}
-          <div style={{ display: "flex", justifyContent: "center", gap: "28px", marginTop: "20px", flexWrap: "wrap" }}>
+
+          <div style={{ display: "flex", justifyContent: "center", gap: "20px", marginTop: "20px", flexWrap: "wrap" }}>
             {c.checks.map((badge) => (
-              <div key={badge} style={{ display: "flex", alignItems: "center", gap: "6px", fontSize: "12px", color: "var(--muted)" }}>
+              <div key={badge} style={{ display: "flex", alignItems: "center", gap: "6px", fontSize: "12px", color: "rgba(255,255,255,0.4)" }}>
                 <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
-                  <circle cx="6.5" cy="6.5" r="6" stroke="var(--blue)" strokeWidth="1" />
-                  <path d="M4 6.5l1.8 1.8L9 4.5" stroke="var(--blue)" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+                  <circle cx="6.5" cy="6.5" r="6" stroke="#4ade80" strokeWidth="1" />
+                  <path d="M4 6.5l1.8 1.8L9 4.5" stroke="#4ade80" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
                 {badge}
               </div>
@@ -145,19 +312,43 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── STATS BAR ────────────────────────────────────────── */}
-      <section style={{ background: "var(--off-white)", borderTop: "1px solid var(--border-light)", borderBottom: "1px solid var(--border-light)" }}>
-        <div style={{ maxWidth: "1160px", margin: "0 auto", padding: "0 48px", display: "grid", gridTemplateColumns: "repeat(4, 1fr)" }}>
-          {c.stats.map((s, i, arr) => (
-            <div key={s.label} style={{ padding: "28px 16px", textAlign: "center", borderRight: i < arr.length - 1 ? "1px solid var(--border-light)" : "none" }}>
-              <div style={{ fontFamily: "var(--font-display)", fontSize: "34px", color: "var(--black)", letterSpacing: "1px", lineHeight: 1, marginBottom: "5px" }}>{s.val}</div>
+      {/* ── STATS BAR ─────────────────────────────────────────── */}
+      <div className="stats-bar">
+        <div className="stats-bar-inner">
+          {c.stats.map((s) => (
+            <div key={s.label} className="stat-cell">
+              <div style={{ fontFamily: "var(--font-display)", fontSize: "clamp(26px, 3vw, 34px)", color: "var(--black)", letterSpacing: "1px", lineHeight: 1, marginBottom: "5px" }}>{s.val}</div>
               <div style={{ fontSize: "11px", color: "var(--muted)", textTransform: "uppercase", letterSpacing: "0.8px" }}>{s.label}</div>
             </div>
           ))}
         </div>
+      </div>
+
+      {/* ── SITUATIONS ────────────────────────────────────────── */}
+      <section className="situations-wrap">
+        <div style={{ textAlign: "center" }}>
+          <span style={{ display: "block", fontSize: "11px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "2px", color: "rgba(255,255,255,0.35)", marginBottom: "12px" }}>{c.situations.label}</span>
+          <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(28px, 4vw, 52px)", color: "var(--white)", letterSpacing: "2px", lineHeight: 1, textTransform: "uppercase" }}>
+            {c.situations.h2}
+          </h2>
+        </div>
+        <div className="situations-grid">
+          {c.situations.items.map((item, i) => (
+            <div key={i} className="situation-card">
+              <div style={{ fontSize: "24px", marginBottom: "10px" }}>{item.icon}</div>
+              <h3 style={{ fontFamily: "var(--font-display)", fontSize: "18px", color: "var(--white)", letterSpacing: "0.5px", textTransform: "uppercase", marginBottom: "8px" }}>{item.title}</h3>
+              <p style={{ fontSize: "13px", color: "rgba(255,255,255,0.5)", lineHeight: 1.7 }}>{item.body}</p>
+            </div>
+          ))}
+        </div>
+        <div style={{ textAlign: "center", marginTop: "48px" }}>
+          <Link href="/sell" className="btn-blue" style={{ fontSize: "15px", padding: "14px 36px" }}>
+            {c.getCta}
+          </Link>
+        </div>
       </section>
 
-      {/* ── HOW IT WORKS ─────────────────────────────────────── */}
+      {/* ── HOW IT WORKS ──────────────────────────────────────── */}
       <section style={{ background: "var(--white)" }}>
         <div className="section">
           <div style={{ textAlign: "center", marginBottom: "56px" }}>
@@ -182,7 +373,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── COMPARE ──────────────────────────────────────────── */}
+      {/* ── COMPARE ───────────────────────────────────────────── */}
       <section style={{ background: "var(--off-white)", borderTop: "1px solid var(--border-light)" }}>
         <div className="section">
           <div style={{ textAlign: "center", marginBottom: "48px" }}>
@@ -204,12 +395,43 @@ export default function HomePage() {
             ))}
           </div>
           <div style={{ textAlign: "center", marginTop: "40px" }}>
-            <Link href="/get-my-cash-offer" className="btn-blue btn-blue-lg">{c.getCta}</Link>
+            <Link href="/sell" className="btn-blue btn-blue-lg">{c.getCta}</Link>
           </div>
         </div>
       </section>
 
-      {/* ── FOR AGENTS ───────────────────────────────────────── */}
+      {/* ── TESTIMONIALS ──────────────────────────────────────── */}
+      <section className="testimonials-wrap">
+        <div style={{ textAlign: "center" }}>
+          <span style={{ display: "block", fontSize: "11px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "2px", color: "var(--blue)", marginBottom: "12px" }}>{c.testimonials.label}</span>
+          <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(28px, 4vw, 52px)", color: "var(--black)", letterSpacing: "2px", lineHeight: 0.95, textTransform: "uppercase" }}>
+            {c.testimonials.h2}
+          </h2>
+        </div>
+        <div className="testimonials-grid">
+          {c.testimonials.items.map((item, i) => (
+            <div key={i} className="testimonial-card">
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                <div style={{ display: "flex", gap: "2px" }}>
+                  {[...Array(5)].map((_, j) => (
+                    <span key={j} style={{ color: "#f59e0b", fontSize: "14px" }}>★</span>
+                  ))}
+                </div>
+                <span style={{ fontSize: "10px", fontWeight: 600, color: "var(--blue)", textTransform: "uppercase", letterSpacing: "0.8px", background: "var(--blue-light)", border: "1px solid var(--blue-border)", padding: "3px 8px", borderRadius: "20px" }}>{item.situation}</span>
+              </div>
+              <p style={{ fontSize: "14px", color: "var(--near-black)", lineHeight: 1.75, fontStyle: "italic", flex: 1 }}>
+                &ldquo;{item.quote}&rdquo;
+              </p>
+              <div>
+                <div style={{ fontSize: "13px", fontWeight: 600, color: "var(--black)" }}>{item.name}</div>
+                <div style={{ fontSize: "11.5px", color: "var(--muted)", marginTop: "2px" }}>{item.location}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── FOR AGENTS ────────────────────────────────────────── */}
       <section style={{ background: "var(--near-black)" }}>
         <div className="section">
           <div className="two-col">
@@ -236,7 +458,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── MARKETS ──────────────────────────────────────────── */}
+      {/* ── MARKETS ───────────────────────────────────────────── */}
       <section style={{ background: "var(--white)" }}>
         <div className="section">
           <div style={{ textAlign: "center", marginBottom: "48px" }}>
@@ -247,19 +469,19 @@ export default function HomePage() {
             {c.markets.map((m) => (
               <div key={m.city} className="hover-lift" style={{ background: "var(--off-white)", border: "1px solid var(--border-light)", borderRadius: "var(--radius)", padding: "32px 28px" }}>
                 <div style={{ display: "flex", alignItems: "flex-end", gap: "8px", marginBottom: "6px" }}>
-                  <span style={{ fontFamily: "var(--font-display)", fontSize: "52px", color: "var(--black)", letterSpacing: "2px", lineHeight: 1 }}>{m.city}</span>
-                  <span style={{ fontFamily: "var(--font-display)", fontSize: "26px", color: "var(--blue)", letterSpacing: "2px", lineHeight: 1.35 }}>{m.state}</span>
+                  <span style={{ fontFamily: "var(--font-display)", fontSize: "clamp(36px, 4vw, 52px)", color: "var(--black)", letterSpacing: "2px", lineHeight: 1 }}>{m.city}</span>
+                  <span style={{ fontFamily: "var(--font-display)", fontSize: "clamp(20px, 2.5vw, 26px)", color: "var(--blue)", letterSpacing: "2px", lineHeight: 1.35 }}>{m.state}</span>
                 </div>
                 <p style={{ fontSize: "11px", color: "var(--muted)", textTransform: "uppercase", letterSpacing: "0.8px", marginBottom: "16px" }}>{m.sub}</p>
                 <p style={{ fontSize: "13.5px", color: "var(--mid)", lineHeight: 1.8, marginBottom: "20px" }}>{m.body}</p>
-                <Link href="/get-my-cash-offer" style={{ display: "inline-flex", alignItems: "center", gap: "5px", fontSize: "13px", color: "var(--blue)", textDecoration: "none", fontWeight: 600 }}>{m.cta}</Link>
+                <Link href="/sell" style={{ display: "inline-flex", alignItems: "center", gap: "5px", fontSize: "13px", color: "var(--blue)", textDecoration: "none", fontWeight: 600 }}>{m.cta}</Link>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── CTA ──────────────────────────────────────────────── */}
+      {/* ── CTA ───────────────────────────────────────────────── */}
       <section style={{ background: "var(--black)" }}>
         <div className="section" style={{ textAlign: "center" }}>
           <span className="section-label" style={{ color: "rgba(255,255,255,0.35)" }}>{c.ctaLabel}</span>
