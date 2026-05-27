@@ -18,6 +18,19 @@ const t = {
       { val: "14 days", label: "Minimum Close" },
       { val: "$0", label: "Agent Commissions" },
     ],
+    conditionLabel: "Any Home, Any Condition",
+    conditionH2: "WE BUY REGARDLESS OF CONDITION",
+    conditionSub: "No repairs required. No cleanup needed. We've purchased homes with fire damage, foundation issues, liens, and everything in between — and we handle it all.",
+    conditions: [
+      { icon: "🔥", title: "Fire or Water Damage" },
+      { icon: "🏚", title: "Major Repairs Needed" },
+      { icon: "🏗", title: "Foundation Issues" },
+      { icon: "📜", title: "Code Violations" },
+      { icon: "💰", title: "Delinquent Taxes" },
+      { icon: "🔒", title: "Liens on the Property" },
+      { icon: "📦", title: "Estate / Hoarder Cleanout" },
+      { icon: "🏠", title: "Vacant or Abandoned" },
+    ],
     situations: {
       label: "We Buy In Any Situation",
       h2: "WE HELP HOMEOWNERS FACING:",
@@ -74,6 +87,34 @@ const t = {
         },
       ],
     },
+    faqLabel: "Common Questions",
+    faqH2: "ANSWERS BEFORE YOU ASK",
+    faqs: [
+      {
+        q: "Will I actually get a fair price?",
+        a: "We research recent comparable sales in your area and factor in what it takes to renovate the property. Our offers reflect real market data — not a lowball number. You're never obligated to accept, and there's no pressure.",
+      },
+      {
+        q: "Are there any fees or hidden costs?",
+        a: "None. We cover all closing costs. No agent commissions, no inspection fees, no surprise deductions at the table. The number we offer is the number you walk away with.",
+      },
+      {
+        q: "Do I need to repair or clean anything?",
+        a: "Not a thing. Leave it exactly as it is — furniture, junk, old appliances, whatever. We handle all cleanup and repairs after closing. You take what matters and go.",
+      },
+      {
+        q: "How fast can we actually close?",
+        a: "Once you accept an offer, we can typically close in 7–14 days. If you need more time to plan your move, we can push closing out 30, 60, even 90 days — entirely on your schedule.",
+      },
+      {
+        q: "What if I have liens or back taxes?",
+        a: "We've handled it before. Tax liens, HOA debt, and mortgage arrears are common. Let us know upfront and our team will work through the title issues as part of the closing process.",
+      },
+      {
+        q: "What types of homes do you buy?",
+        a: "Single-family homes, multi-family, condos, townhomes, vacant land, and rental properties — in Phoenix metro and the Dallas–Fort Worth area. Any age, any price range, any condition.",
+      },
+    ],
     agentLabel: "Agent Program",
     agentH2: ["Are You an Agent", "or Wholesaler?"],
     agentBody: "We work directly with real estate agents and wholesalers. Full commission paid, reliable all-cash closings in as little as 14 days.",
@@ -105,6 +146,19 @@ const t = {
       { val: "24 hrs", label: "Tiempo de Respuesta" },
       { val: "14 días", label: "Cierre Mínimo" },
       { val: "$0", label: "Comisiones" },
+    ],
+    conditionLabel: "Cualquier Casa, Cualquier Condición",
+    conditionH2: "COMPRAMOS SIN IMPORTAR LA CONDICIÓN",
+    conditionSub: "No se requieren reparaciones. No se necesita limpieza. Hemos comprado casas con daños por incendio, problemas de cimentación, gravámenes y mucho más — nosotros nos encargamos de todo.",
+    conditions: [
+      { icon: "🔥", title: "Daño por Fuego o Agua" },
+      { icon: "🏚", title: "Necesita Reparaciones Mayores" },
+      { icon: "🏗", title: "Problemas de Cimentación" },
+      { icon: "📜", title: "Violaciones de Código" },
+      { icon: "💰", title: "Impuestos Atrasados" },
+      { icon: "🔒", title: "Gravámenes en la Propiedad" },
+      { icon: "📦", title: "Casa de Herencia / Desorden" },
+      { icon: "🏠", title: "Vacía o Abandonada" },
     ],
     situations: {
       label: "Compramos en Cualquier Situación",
@@ -162,6 +216,34 @@ const t = {
         },
       ],
     },
+    faqLabel: "Preguntas Frecuentes",
+    faqH2: "RESPUESTAS ANTES DE QUE PREGUNTES",
+    faqs: [
+      {
+        q: "¿Realmente obtendré un precio justo?",
+        a: "Investigamos las ventas comparables recientes en tu área y consideramos el costo de renovación. Nuestras ofertas reflejan datos reales del mercado — no un número bajo. Nunca estás obligado a aceptar, y no hay presión.",
+      },
+      {
+        q: "¿Hay alguna tarifa o costo oculto?",
+        a: "Ninguno. Cubrimos todos los costos de cierre. Sin comisiones de agente, sin tarifas de inspección, sin deducciones sorpresa. El número que ofrecemos es el que te llevas.",
+      },
+      {
+        q: "¿Necesito reparar o limpiar algo?",
+        a: "Nada. Déjala exactamente como está — muebles, basura, electrodomésticos viejos, lo que sea. Nosotros nos encargamos de la limpieza y reparaciones después del cierre.",
+      },
+      {
+        q: "¿Qué tan rápido podemos cerrar realmente?",
+        a: "Una vez que aceptas la oferta, generalmente podemos cerrar en 7–14 días. Si necesitas más tiempo para planear tu mudanza, podemos extender el cierre 30, 60 o hasta 90 días.",
+      },
+      {
+        q: "¿Qué pasa si tengo gravámenes o impuestos atrasados?",
+        a: "Ya lo hemos manejado antes. Los gravámenes fiscales, deudas de HOA y atrasos hipotecarios son comunes. Dínos desde el principio y nuestro equipo resolverá los problemas de título como parte del proceso de cierre.",
+      },
+      {
+        q: "¿Qué tipos de casas compran?",
+        a: "Casas unifamiliares, multifamiliares, condominios, casas adosadas, terrenos y propiedades de alquiler — en el área metropolitana de Phoenix y Dallas–Fort Worth. Cualquier edad, cualquier precio, cualquier condición.",
+      },
+    ],
     agentLabel: "Programa para Agentes",
     agentH2: ["¿Eres Agente", "o Mayorista?"],
     agentBody: "Trabajamos directamente con agentes inmobiliarios y mayoristas. Comisión completa pagada, cierres garantizados en efectivo en tan solo 14 días.",
@@ -217,6 +299,30 @@ export default function HomePage() {
           border-right: 1px solid var(--border-light);
         }
         .stat-cell:last-child { border-right: none; }
+        .condition-wrap {
+          background: var(--white);
+          padding: 88px 48px;
+          border-bottom: 1px solid var(--border-light);
+        }
+        .condition-grid {
+          max-width: 900px;
+          margin: 48px auto 0;
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 12px;
+        }
+        .condition-card {
+          background: var(--off-white);
+          border: 1px solid var(--border-light);
+          border-radius: var(--radius-sm);
+          padding: 20px 16px;
+          text-align: center;
+          transition: border-color 0.15s, background 0.15s;
+        }
+        .condition-card:hover {
+          border-color: var(--blue-border);
+          background: var(--blue-light);
+        }
         .situations-wrap {
           background: var(--black);
           padding: 88px 48px;
@@ -257,6 +363,24 @@ export default function HomePage() {
           flex-direction: column;
           gap: 16px;
         }
+        .faq-wrap {
+          background: var(--white);
+          padding: 88px 48px;
+          border-top: 1px solid var(--border-light);
+        }
+        .faq-grid {
+          max-width: 960px;
+          margin: 48px auto 0;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 16px;
+        }
+        .faq-card {
+          background: var(--off-white);
+          border: 1px solid var(--border-light);
+          border-radius: var(--radius-sm);
+          padding: 24px 22px;
+        }
         @media (max-width: 900px) {
           .hero-wrap { padding: 56px 20px 60px; }
           .stats-bar-inner { padding: 0 20px; grid-template-columns: repeat(2, 1fr); }
@@ -264,17 +388,24 @@ export default function HomePage() {
           .stat-cell:nth-child(odd) { border-right: 1px solid var(--border-light); }
           .stat-cell:last-child { border-bottom: none; }
           .stat-cell:nth-last-child(2):nth-child(odd) { border-bottom: none; }
+          .condition-wrap { padding: 60px 20px; }
+          .condition-grid { grid-template-columns: repeat(2, 1fr); }
           .situations-wrap { padding: 60px 20px; }
           .situations-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
           .testimonials-wrap { padding: 60px 20px; }
           .testimonials-grid { grid-template-columns: 1fr; gap: 16px; }
+          .faq-wrap { padding: 60px 20px; }
+          .faq-grid { grid-template-columns: 1fr; }
         }
         @media (max-width: 600px) {
           .hero-wrap { padding: 44px 16px 52px; }
           .stats-bar-inner { grid-template-columns: repeat(2, 1fr); padding: 0 16px; }
+          .condition-wrap { padding: 48px 16px; }
+          .condition-grid { grid-template-columns: repeat(2, 1fr); }
           .situations-grid { grid-template-columns: 1fr; }
           .situations-wrap { padding: 48px 16px; }
           .testimonials-wrap { padding: 48px 16px; }
+          .faq-wrap { padding: 48px 16px; }
         }
       `}</style>
 
@@ -324,6 +455,25 @@ export default function HomePage() {
         </div>
       </div>
 
+      {/* ── ANY CONDITION ─────────────────────────────────────── */}
+      <section className="condition-wrap">
+        <div style={{ textAlign: "center" }}>
+          <span style={{ display: "block", fontSize: "11px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "2px", color: "var(--blue)", marginBottom: "12px" }}>{c.conditionLabel}</span>
+          <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(28px, 4vw, 52px)", color: "var(--black)", letterSpacing: "2px", lineHeight: 1, textTransform: "uppercase", marginBottom: "18px" }}>
+            {c.conditionH2}
+          </h2>
+          <p style={{ fontSize: "15px", color: "var(--mid)", maxWidth: "580px", margin: "0 auto", lineHeight: 1.75 }}>{c.conditionSub}</p>
+        </div>
+        <div className="condition-grid">
+          {c.conditions.map((item, i) => (
+            <div key={i} className="condition-card">
+              <div style={{ fontSize: "26px", marginBottom: "10px" }}>{item.icon}</div>
+              <div style={{ fontSize: "13px", fontWeight: 600, color: "var(--near-black)", lineHeight: 1.4 }}>{item.title}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* ── SITUATIONS ────────────────────────────────────────── */}
       <section className="situations-wrap">
         <div style={{ textAlign: "center" }}>
@@ -342,7 +492,7 @@ export default function HomePage() {
           ))}
         </div>
         <div style={{ textAlign: "center", marginTop: "48px" }}>
-          <Link href="/sell" className="btn-blue" style={{ fontSize: "15px", padding: "14px 36px" }}>
+          <Link href="/get-my-cash-offer" className="btn-blue" style={{ fontSize: "15px", padding: "14px 36px" }}>
             {c.getCta}
           </Link>
         </div>
@@ -395,7 +545,7 @@ export default function HomePage() {
             ))}
           </div>
           <div style={{ textAlign: "center", marginTop: "40px" }}>
-            <Link href="/sell" className="btn-blue btn-blue-lg">{c.getCta}</Link>
+            <Link href="/get-my-cash-offer" className="btn-blue btn-blue-lg">{c.getCta}</Link>
           </div>
         </div>
       </section>
@@ -426,6 +576,29 @@ export default function HomePage() {
                 <div style={{ fontSize: "13px", fontWeight: 600, color: "var(--black)" }}>{item.name}</div>
                 <div style={{ fontSize: "11.5px", color: "var(--muted)", marginTop: "2px" }}>{item.location}</div>
               </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── FAQ ───────────────────────────────────────────────── */}
+      <section className="faq-wrap">
+        <div style={{ textAlign: "center" }}>
+          <span style={{ display: "block", fontSize: "11px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "2px", color: "var(--blue)", marginBottom: "12px" }}>{c.faqLabel}</span>
+          <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(28px, 4vw, 52px)", color: "var(--black)", letterSpacing: "2px", lineHeight: 1, textTransform: "uppercase" }}>
+            {c.faqH2}
+          </h2>
+        </div>
+        <div className="faq-grid">
+          {c.faqs.map((faq, i) => (
+            <div key={i} className="faq-card">
+              <div style={{ display: "flex", gap: "12px", alignItems: "flex-start", marginBottom: "10px" }}>
+                <span style={{ width: "22px", height: "22px", borderRadius: "50%", background: "var(--blue-light)", border: "1px solid var(--blue-border)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, marginTop: "1px" }}>
+                  <span style={{ fontFamily: "var(--font-display)", fontSize: "10px", color: "var(--blue)", letterSpacing: "0.5px" }}>Q</span>
+                </span>
+                <h3 style={{ fontSize: "14px", fontWeight: 700, color: "var(--near-black)", lineHeight: 1.4 }}>{faq.q}</h3>
+              </div>
+              <p style={{ fontSize: "13.5px", color: "var(--mid)", lineHeight: 1.75, paddingLeft: "34px" }}>{faq.a}</p>
             </div>
           ))}
         </div>
@@ -474,7 +647,7 @@ export default function HomePage() {
                 </div>
                 <p style={{ fontSize: "11px", color: "var(--muted)", textTransform: "uppercase", letterSpacing: "0.8px", marginBottom: "16px" }}>{m.sub}</p>
                 <p style={{ fontSize: "13.5px", color: "var(--mid)", lineHeight: 1.8, marginBottom: "20px" }}>{m.body}</p>
-                <Link href="/sell" style={{ display: "inline-flex", alignItems: "center", gap: "5px", fontSize: "13px", color: "var(--blue)", textDecoration: "none", fontWeight: 600 }}>{m.cta}</Link>
+                <Link href="/get-my-cash-offer" style={{ display: "inline-flex", alignItems: "center", gap: "5px", fontSize: "13px", color: "var(--blue)", textDecoration: "none", fontWeight: 600 }}>{m.cta}</Link>
               </div>
             ))}
           </div>
