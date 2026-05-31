@@ -21,6 +21,7 @@ async function pushToGHL(data: Record<string, string>) {
         timeline: data.timeline ?? "",
         compensation: data.compensation ?? "",
         notes: data.notes ?? "",
+        photoLink: data.photoLink ?? "",
         source: "Highlander Buys Homes — Agent/Wholesaler Form",
         optIn: new Date().toISOString(),
       }),
@@ -31,7 +32,7 @@ async function pushToGHL(data: Record<string, string>) {
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json() as Record<string, string>;
-    const { firstName, lastName, email, phone, company, role, address, askingPrice, condition, timeline, compensation, notes } = body;
+    const { firstName, lastName, email, phone, company, role, address, askingPrice, condition, timeline, compensation, photoLink, notes } = body;
 
     if (!email || !address) return NextResponse.json({ ok: false }, { status: 400 });
 
@@ -63,6 +64,7 @@ export async function POST(req: NextRequest) {
                 <tr style="border-top:1px solid #e8e7e2"><td style="padding:8px 0;font-size:11px;color:#888;text-transform:uppercase;letter-spacing:1px">Condition</td><td style="padding:8px 0;font-size:14px;color:#111">${condition || "Not specified"}</td></tr>
                 <tr style="border-top:1px solid #e8e7e2"><td style="padding:8px 0;font-size:11px;color:#888;text-transform:uppercase;letter-spacing:1px">Timeline</td><td style="padding:8px 0;font-size:14px;color:#111">${timeline || "Not specified"}</td></tr>
                 ${compensation ? `<tr style="border-top:1px solid #e8e7e2"><td style="padding:8px 0;font-size:11px;color:#888;text-transform:uppercase;letter-spacing:1px">${compensationLabel}</td><td style="padding:8px 0;font-size:14px;color:#111">${compensation}</td></tr>` : ""}
+                ${photoLink ? `<tr style="border-top:1px solid #e8e7e2"><td style="padding:8px 0;font-size:11px;color:#888;text-transform:uppercase;letter-spacing:1px">Photos</td><td style="padding:8px 0;font-size:14px;color:#111"><a href="${photoLink}" style="color:#1a56db">${photoLink}</a></td></tr>` : ""}
                 ${notes ? `<tr style="border-top:1px solid #e8e7e2"><td style="padding:8px 0;font-size:11px;color:#888;text-transform:uppercase;letter-spacing:1px">Notes</td><td style="padding:8px 0;font-size:14px;color:#111">${notes}</td></tr>` : ""}
               </table>
               <div style="margin-top:24px;padding-top:20px;border-top:1px solid #e8e7e2;font-size:12px;color:#aaa">

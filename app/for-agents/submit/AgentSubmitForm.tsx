@@ -172,6 +172,15 @@ export default function AgentSubmitForm() {
         </div>
       </div>
 
+      {/* Photo / MLS Link */}
+      <div style={{ display: "flex", flexDirection: "column", gap: "6px", marginBottom: "14px" }}>
+        <label style={label} htmlFor="photoLink">
+          Photos / MLS Link <span style={{ fontWeight: 400, textTransform: "none", letterSpacing: 0, fontSize: "11px", color: "var(--muted)" }}>(optional)</span>
+        </label>
+        <input id="photoLink" name="photoLink" type="url" style={input} placeholder="e.g. MLS listing, Google Drive, Dropbox, or Zillow link" />
+        <span style={{ fontSize: "11px", color: "var(--muted)", marginTop: "2px" }}>Paste any link to photos — MLS, Google Drive, Dropbox, or Zillow all work.</span>
+      </div>
+
       {/* Notes */}
       <div style={{ display: "flex", flexDirection: "column", gap: "6px", marginBottom: "28px" }}>
         <label style={label} htmlFor="notes">Notes <span style={{ fontWeight: 400, textTransform: "none", letterSpacing: 0, fontSize: "11px", color: "var(--muted)" }}>(optional)</span></label>
