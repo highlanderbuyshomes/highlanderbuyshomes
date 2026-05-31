@@ -39,9 +39,10 @@ export async function POST(req: NextRequest) {
     const roleLabel = role === "wholesaler" ? "Wholesaler" : "Real Estate Agent";
     const compensationLabel = role === "wholesaler" ? "Assignment Fee" : "Commission";
 
+    const resendKey = process.env.RESEND_API_KEY;
     await Promise.allSettled([
       pushToGHL(body),
-      new Resend(process.env.RESEND_API_KEY).emails.send({
+      resendKey ? new Resend(resendKey).emails.send({
         from: process.env.RESEND_FROM_EMAIL ?? "noreply@highlanderbuyshomes.com",
         to: process.env.ADMIN_EMAIL ?? "admin@highlanderbuyshomes.com",
         subject: `New Deal Submission — ${roleLabel} — ${address}`,
@@ -73,7 +74,7 @@ export async function POST(req: NextRequest) {
             </div>
           </div>
         `,
-      }),
+      }) : Promise.resolve(),
     ]);
 
     return NextResponse.json({ ok: true });
