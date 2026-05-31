@@ -50,7 +50,8 @@ export default function AgentSubmitForm() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    const data = Object.fromEntries(new FormData(e.currentTarget));
+    const data = Object.fromEntries(new FormData(e.currentTarget)) as Record<string, string>;
+    data.optIn = new Date().toISOString();
     try {
       await fetch("/api/agent-offer", { method: "POST", body: JSON.stringify(data), headers: { "Content-Type": "application/json" } });
     } catch { /* show success regardless */ }
@@ -182,10 +183,18 @@ export default function AgentSubmitForm() {
       </div>
 
       {/* Notes */}
-      <div style={{ display: "flex", flexDirection: "column", gap: "6px", marginBottom: "28px" }}>
+      <div style={{ display: "flex", flexDirection: "column", gap: "6px", marginBottom: "20px" }}>
         <label style={label} htmlFor="notes">Notes <span style={{ fontWeight: 400, textTransform: "none", letterSpacing: 0, fontSize: "11px", color: "var(--muted)" }}>(optional)</span></label>
         <textarea id="notes" name="notes" rows={3} style={{ ...input, resize: "vertical" }} placeholder="Tenant-occupied, seller needs leaseback, estate sale, anything relevant…" />
       </div>
+
+      {/* Opt-in */}
+      <label style={{ display: "flex", alignItems: "flex-start", gap: "10px", cursor: "pointer", marginBottom: "28px" }}>
+        <input name="optInConsent" type="checkbox" required style={{ marginTop: "2px", accentColor: "var(--blue)", width: "15px", height: "15px", flexShrink: 0, cursor: "pointer" }} />
+        <span style={{ fontSize: "12px", color: "var(--mid)", lineHeight: 1.6 }}>
+          I agree to receive marketing communications, deal updates, and text messages from Highlander REI. You may opt out at any time.
+        </span>
+      </label>
 
       <button type="submit" disabled={loading} className="btn-blue btn-blue-lg" style={{ width: "100%", justifyContent: "center" }}>
         {loading ? "Submitting…" : "Submit Property →"}
