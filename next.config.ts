@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
     return [
       { source: "/how-it-works", destination: "/cash-offer", permanent: true },
       { source: "/sell", destination: "/get-my-cash-offer", permanent: true },
+      { source: "/for-agents/submit", destination: "/for-agents-and-wholesalers", permanent: true },
     ];
   },
 };

@@ -105,7 +105,7 @@ export default function ForAgentsPage() {
             {c.h1a}<br /><span style={{ color: "var(--blue)" }}>{c.h1b}</span>
           </h1>
           <p style={{ fontSize: "17px", color: "rgba(255,255,255,0.5)", maxWidth: "520px", lineHeight: 1.8, fontWeight: 300, marginBottom: "36px" }}>{c.sub}</p>
-          <Link href="/for-agents/submit" className="btn-blue btn-blue-lg">{c.cta}</Link>
+          <Link href="/for-agents-and-wholesalers" className="btn-blue btn-blue-lg">{c.cta}</Link>
         </div>
       </section>
 
@@ -185,7 +185,7 @@ export default function ForAgentsPage() {
             {c.ctaH2a}<br />{c.ctaH2b}
           </h2>
           <p style={{ fontSize: "15px", color: "rgba(255,255,255,0.45)", maxWidth: "400px", margin: "0 auto 32px", lineHeight: 1.75 }}>{c.ctaSub}</p>
-          <Link href="/for-agents/submit" className="btn-blue btn-blue-lg">{c.ctaBtn}</Link>
+          <Link href="/for-agents-and-wholesalers" className="btn-blue btn-blue-lg">{c.ctaBtn}</Link>
         </div>
       </section>
     </>
