@@ -1,6 +1,19 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 
+async function pushToPortal(data: { name: string; email: string; phone?: string; message?: string; type: string }) {
+  const key = process.env.LEADS_API_KEY;
+  const url = process.env.PORTAL_URL ?? "https://highlanderrei.com";
+  if (!key) return;
+  try {
+    await fetch(`${url}/api/leads`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "x-api-key": key },
+      body: JSON.stringify({ ...data, source: "highlander-buys-homes" }),
+    });
+  } catch { /* non-blocking */ }
+}
+
 export async function POST(req: NextRequest) {
   const resend = new Resend(process.env.RESEND_API_KEY);
   try {
@@ -10,6 +23,8 @@ export async function POST(req: NextRequest) {
     if (!email || !address) {
       return NextResponse.json({ ok: false }, { status: 400 });
     }
+
+    void pushToPortal({ name: `${firstName ?? ""} ${lastName ?? ""}`.trim() || email, email, phone, message: `Property: ${address}${condition ? `, ${condition}` : ""}${timeline ? ` — ${timeline}` : ""}`, type: "cash_offer" });
 
     await resend.emails.send({
       from: process.env.RESEND_FROM_EMAIL ?? "noreply@highlanderbuyshomes.com",

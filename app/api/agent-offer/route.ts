@@ -1,6 +1,19 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 
+async function pushToPortal(data: { name: string; email: string; phone?: string; message?: string; type: string; company?: string }) {
+  const key = process.env.LEADS_API_KEY;
+  const url = process.env.PORTAL_URL ?? "https://highlanderrei.com";
+  if (!key) return;
+  try {
+    await fetch(`${url}/api/leads`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "x-api-key": key },
+      body: JSON.stringify({ ...data, source: "highlander-buys-homes" }),
+    });
+  } catch { /* non-blocking */ }
+}
+
 async function pushToGHL(data: Record<string, string>) {
   const webhookUrl = process.env.GHL_AGENT_WEBHOOK_URL;
   if (!webhookUrl) return;
@@ -40,6 +53,8 @@ export async function POST(req: NextRequest) {
     const compensationLabel = role === "wholesaler" ? "Assignment Fee" : "Commission";
 
     const resendKey = process.env.RESEND_API_KEY;
+    void pushToPortal({ name: `${firstName ?? ""} ${lastName ?? ""}`.trim() || email, email, phone, company, message: `Property: ${address}${askingPrice ? ` — Asking: ${askingPrice}` : ""}${notes ? ` — ${notes}` : ""}`, type: "agent" });
+
     await Promise.allSettled([
       pushToGHL(body),
       resendKey ? new Resend(resendKey).emails.send({
