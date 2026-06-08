@@ -22,25 +22,25 @@ const t = {
     conditionH2: "WE BUY REGARDLESS OF CONDITION",
     conditionSub: "No repairs required. No cleanup needed. We've purchased homes with fire damage, foundation issues, liens, and everything in between — and we handle it all.",
     conditions: [
-      { icon: "🔥", title: "Fire or Water Damage" },
-      { icon: "🏚", title: "Major Repairs Needed" },
-      { icon: "🏗", title: "Foundation Issues" },
-      { icon: "📜", title: "Code Violations" },
-      { icon: "💰", title: "Delinquent Taxes" },
-      { icon: "🔒", title: "Liens on the Property" },
-      { icon: "📦", title: "Estate / Hoarder Cleanout" },
-      { icon: "🏠", title: "Vacant or Abandoned" },
+      { title: "Fire or Water Damage" },
+      { title: "Major Repairs Needed" },
+      { title: "Foundation Issues" },
+      { title: "Code Violations" },
+      { title: "Delinquent Taxes" },
+      { title: "Liens on the Property" },
+      { title: "Estate / Hoarder Cleanout" },
+      { title: "Vacant or Abandoned" },
     ],
     situations: {
       label: "We Buy In Any Situation",
       h2: "WE HELP HOMEOWNERS FACING:",
       items: [
-        { icon: "⚡", title: "Foreclosure", body: "Stop the process before it damages your credit. We move fast — sometimes closing in under 2 weeks." },
-        { icon: "📋", title: "Inherited Property", body: "Don't pay taxes and maintenance on a home you didn't plan for. We make it simple." },
-        { icon: "💔", title: "Divorce", body: "A quick, clean sale removes the stress of a shared asset so both parties can move on." },
-        { icon: "📦", title: "Relocation", body: "Moving for work or life? Sell without the waiting game of a traditional listing." },
-        { icon: "💳", title: "Behind on Payments", body: "Get out from under a mortgage that no longer works before it becomes a larger problem." },
-        { icon: "🔑", title: "Problem Tenants", body: "Done being a landlord? We buy rental properties as-is — tenants and all." },
+        { title: "Foreclosure", body: "Stop the process before it damages your credit. We move fast — sometimes closing in under 2 weeks." },
+        { title: "Inherited Property", body: "Don't pay taxes and maintenance on a home you didn't plan for. We make it simple." },
+        { title: "Divorce", body: "A quick, clean sale removes the stress of a shared asset so both parties can move on." },
+        { title: "Relocation", body: "Moving for work or life? Sell without the waiting game of a traditional listing." },
+        { title: "Behind on Payments", body: "Get out from under a mortgage that no longer works before it becomes a larger problem." },
+        { title: "Problem Tenants", body: "Done being a landlord? We buy rental properties as-is — tenants and all." },
       ],
     },
     processLabel: "The Process",
@@ -151,25 +151,25 @@ const t = {
     conditionH2: "COMPRAMOS SIN IMPORTAR LA CONDICIÓN",
     conditionSub: "No se requieren reparaciones. No se necesita limpieza. Hemos comprado casas con daños por incendio, problemas de cimentación, gravámenes y mucho más — nosotros nos encargamos de todo.",
     conditions: [
-      { icon: "🔥", title: "Daño por Fuego o Agua" },
-      { icon: "🏚", title: "Necesita Reparaciones Mayores" },
-      { icon: "🏗", title: "Problemas de Cimentación" },
-      { icon: "📜", title: "Violaciones de Código" },
-      { icon: "💰", title: "Impuestos Atrasados" },
-      { icon: "🔒", title: "Gravámenes en la Propiedad" },
-      { icon: "📦", title: "Casa de Herencia / Desorden" },
-      { icon: "🏠", title: "Vacía o Abandonada" },
+      { title: "Daño por Fuego o Agua" },
+      { title: "Necesita Reparaciones Mayores" },
+      { title: "Problemas de Cimentación" },
+      { title: "Violaciones de Código" },
+      { title: "Impuestos Atrasados" },
+      { title: "Gravámenes en la Propiedad" },
+      { title: "Casa de Herencia / Desorden" },
+      { title: "Vacía o Abandonada" },
     ],
     situations: {
       label: "Compramos en Cualquier Situación",
       h2: "AYUDAMOS A PROPIETARIOS EN:",
       items: [
-        { icon: "⚡", title: "Ejecución Hipotecaria", body: "Detén el proceso antes de que dañe tu crédito. Actuamos rápido — a veces cerramos en menos de 2 semanas." },
-        { icon: "📋", title: "Propiedad Heredada", body: "No pagues impuestos y mantenimiento de una casa que no planeabas tener. Lo hacemos simple." },
-        { icon: "💔", title: "Divorcio", body: "Una venta rápida elimina el estrés de un activo compartido para que ambas partes puedan seguir adelante." },
-        { icon: "📦", title: "Reubicación", body: "¿Mudándote? Vende sin esperar meses en el mercado tradicional." },
-        { icon: "💳", title: "Pagos Atrasados", body: "Libérate de una hipoteca que ya no funciona antes de que se convierta en un problema mayor." },
-        { icon: "🔑", title: "Inquilinos Problemáticos", body: "¿Cansado de ser arrendador? Compramos propiedades de alquiler tal como están." },
+        { title: "Ejecución Hipotecaria", body: "Detén el proceso antes de que dañe tu crédito. Actuamos rápido — a veces cerramos en menos de 2 semanas." },
+        { title: "Propiedad Heredada", body: "No pagues impuestos y mantenimiento de una casa que no planeabas tener. Lo hacemos simple." },
+        { title: "Divorcio", body: "Una venta rápida elimina el estrés de un activo compartido para que ambas partes puedan seguir adelante." },
+        { title: "Reubicación", body: "¿Mudándote? Vende sin esperar meses en el mercado tradicional." },
+        { title: "Pagos Atrasados", body: "Libérate de una hipoteca que ya no funciona antes de que se convierta en un problema mayor." },
+        { title: "Inquilinos Problemáticos", body: "¿Cansado de ser arrendador? Compramos propiedades de alquiler tal como están." },
       ],
     },
     processLabel: "El Proceso",
@@ -264,6 +264,29 @@ const t = {
     ctaBody: "Oferta en efectivo gratis, sin obligación en 24 horas. Sin reparaciones. Sin comisiones.",
   },
 };
+
+const ip = { width: "18", height: "18", viewBox: "0 0 24 24", fill: "none", stroke: "var(--blue)", strokeWidth: "1.8", strokeLinecap: "round" as const, strokeLinejoin: "round" as const };
+const iw = { ...ip, stroke: "rgba(255,255,255,0.7)" };
+
+const conditionIcons = [
+  <svg key="fire" {...ip}><path d="M12 2c0 4-4 6-4 10a4 4 0 008 0c0-4-4-6-4-10z"/><path d="M12 12c0 2-1.5 3-1.5 4.5a1.5 1.5 0 003 0C13.5 15 12 14 12 12z"/></svg>,
+  <svg key="wrench" {...ip}><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>,
+  <svg key="build" {...ip}><rect x="2" y="19" width="20" height="2" rx="1"/><path d="M6 19V10M18 19V10M2 10l10-7 10 7"/><rect x="9" y="14" width="6" height="5"/></svg>,
+  <svg key="doc" {...ip}><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h4"/><path d="M10 9l1.5 1.5L14 7"/></svg>,
+  <svg key="dollar" {...ip}><circle cx="12" cy="12" r="10"/><path d="M12 6v12M15 9H10.5a2.5 2.5 0 000 5h3a2.5 2.5 0 010 5H9"/></svg>,
+  <svg key="lock" {...ip}><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/><circle cx="12" cy="15" r="1.5"/></svg>,
+  <svg key="box" {...ip}><path d="M21 8V21H3V8"/><path d="M23 3H1l2 5h18z"/><path d="M10 12h4"/></svg>,
+  <svg key="home" {...ip}><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>,
+];
+
+const situationIcons = [
+  <svg key="alert" {...iw}><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>,
+  <svg key="clipboard" {...iw}><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"/><path d="M9 12h6M9 16h4"/></svg>,
+  <svg key="users" {...iw}><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>,
+  <svg key="move" {...iw}><path d="M5 12H19M12 5l7 7-7 7"/></svg>,
+  <svg key="card" {...iw}><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>,
+  <svg key="key" {...iw}><circle cx="7.5" cy="15.5" r="5.5"/><path d="M21 2l-9.6 9.6M15.5 7.5l3 3"/></svg>,
+];
 
 export default function HomePage() {
   const { lang } = useLanguage();
@@ -467,7 +490,9 @@ export default function HomePage() {
         <div className="condition-grid">
           {c.conditions.map((item, i) => (
             <div key={i} className="condition-card">
-              <div style={{ fontSize: "26px", marginBottom: "10px" }}>{item.icon}</div>
+              <div style={{ width: "36px", height: "36px", borderRadius: "10px", background: "var(--blue-light)", border: "1px solid var(--blue-border)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 12px" }}>
+                {conditionIcons[i]}
+              </div>
               <div style={{ fontSize: "13px", fontWeight: 600, color: "var(--near-black)", lineHeight: 1.4 }}>{item.title}</div>
             </div>
           ))}
@@ -485,7 +510,9 @@ export default function HomePage() {
         <div className="situations-grid">
           {c.situations.items.map((item, i) => (
             <div key={i} className="situation-card">
-              <div style={{ fontSize: "24px", marginBottom: "10px" }}>{item.icon}</div>
+              <div style={{ width: "36px", height: "36px", borderRadius: "10px", background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.12)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "14px" }}>
+                {situationIcons[i]}
+              </div>
               <h3 style={{ fontFamily: "var(--font-display)", fontSize: "18px", color: "var(--white)", letterSpacing: "0.5px", textTransform: "uppercase", marginBottom: "8px" }}>{item.title}</h3>
               <p style={{ fontSize: "13px", color: "rgba(255,255,255,0.5)", lineHeight: 1.7 }}>{item.body}</p>
             </div>

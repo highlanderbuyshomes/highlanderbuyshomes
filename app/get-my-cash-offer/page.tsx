@@ -6,30 +6,30 @@ const t = {
   en: {
     label: "No repairs · No fees · No obligation",
     h1a: "GET MY",
-    h1b: "CASH OFFER.",
-    sub: "Fill out the form and we'll reach out within 24 hours with your competitive, no-obligation cash offer.",
+    h1b: "OFFER.",
+    sub: "Tell us about your property and what you're looking for. We'll reach out within 24 hours with your best option.",
     points: [
-      { title: "Free & no obligation", body: "Getting an offer costs nothing and you're never required to accept." },
-      { title: "Any condition, any situation", body: "We buy as-is. No repairs, no cleaning, no staging required." },
-      { title: "Close when you're ready", body: "7 days or 90 — you set the date. We work around your schedule." },
+      { title: "Cash Offer", body: "Close in as little as 7 days. No repairs, no showings, no agent fees. We buy as-is." },
+      { title: "Flex Equity Program", body: "We repair, stage, and list your home — you keep the upside without the hassle." },
+      { title: "You decide, no pressure", body: "Tell us your situation and we'll walk through which path makes the most sense for you." },
     ],
     trustItems: ["Offer in 24 hours", "Close in 7 days", "$0 commissions", "Any condition"],
   },
   es: {
     label: "Sin reparaciones · Sin comisiones · Sin compromiso",
     h1a: "OBTENER MI",
-    h1b: "OFERTA EN EFECTIVO.",
-    sub: "Completa el formulario y nos comunicaremos dentro de 24 horas con tu oferta competitiva en efectivo, sin compromiso.",
+    h1b: "OFERTA.",
+    sub: "Cuéntanos sobre tu propiedad y lo que buscas. Nos comunicamos en 24 horas con tu mejor opción.",
     points: [
-      { title: "Gratis y sin compromiso", body: "Obtener una oferta no cuesta nada y nunca estás obligado a aceptarla." },
-      { title: "Cualquier condición, cualquier situación", body: "Compramos tal como está. Sin reparaciones, sin limpieza, sin staging." },
-      { title: "Cierra cuando estés listo", body: "7 días o 90 — tú fijas la fecha. Nos adaptamos a tu agenda." },
+      { title: "Oferta en Efectivo", body: "Cierra en tan solo 7 días. Sin reparaciones, sin visitas, sin comisiones." },
+      { title: "Programa Flex Equity", body: "Reparamos, amoblamos y listamos tu casa — tú te quedas con las ganancias sin el estrés." },
+      { title: "Tú decides, sin presión", body: "Cuéntanos tu situación y te explicamos cuál camino tiene más sentido para ti." },
     ],
     trustItems: ["Oferta en 24 horas", "Cierre en 7 días", "$0 comisiones", "Cualquier condición"],
   },
 };
 
-export default function GetMyCashOfferPage() {
+export default function GetMyOfferPage() {
   const { lang } = useLanguage();
   const c = t[lang];
 

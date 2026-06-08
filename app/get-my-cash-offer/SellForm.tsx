@@ -10,6 +10,9 @@ declare global {
 
 const t = {
   en: {
+    interestLabel: "I'm interested in",
+    interestCash: "Cash Offer",
+    interestFlex: "Flex Equity Program",
     firstName: "First Name *",
     lastName: "Last Name *",
     email: "Email *",
@@ -34,13 +37,17 @@ const t = {
     message: "Anything else we should know?",
     messageOptional: "(optional)",
     messagePlaceholder: "Tenant-occupied, estate sale, specific close date needed…",
-    submit: "Get My Cash Offer →",
+    submitCash: "Get My Cash Offer →",
+    submitFlex: "Get My Flex Equity Offer →",
     submitting: "Submitting…",
     footer: "No obligation · No fees · We respond within 24 hours",
     successTitle: "Request Received",
-    successBody: "We'll review your property and follow up within 24 hours with your cash offer. Keep an eye on your email and phone.",
+    successBody: "We'll review your property and follow up within 24 hours with your best option. Keep an eye on your email and phone.",
   },
   es: {
+    interestLabel: "Me interesa",
+    interestCash: "Oferta en Efectivo",
+    interestFlex: "Programa Flex Equity",
     firstName: "Nombre *",
     lastName: "Apellido *",
     email: "Correo Electrónico *",
@@ -65,11 +72,12 @@ const t = {
     message: "¿Algo más que debamos saber?",
     messageOptional: "(opcional)",
     messagePlaceholder: "Ocupada por inquilinos, venta de sucesión, fecha de cierre específica…",
-    submit: "Obtener Mi Oferta en Efectivo →",
+    submitCash: "Obtener Mi Oferta en Efectivo →",
+    submitFlex: "Obtener Mi Oferta Flex Equity →",
     submitting: "Enviando…",
     footer: "Sin compromiso · Sin comisiones · Respondemos dentro de 24 horas",
     successTitle: "Solicitud Recibida",
-    successBody: "Revisaremos tu propiedad y te enviaremos tu oferta en efectivo dentro de 24 horas. Mantén un ojo en tu correo electrónico y teléfono.",
+    successBody: "Revisaremos tu propiedad y te contactaremos dentro de 24 horas con tu mejor opción. Mantén un ojo en tu correo electrónico y teléfono.",
   },
 };
 
@@ -94,6 +102,7 @@ function loadGooglePlaces(cb: () => void) {
 export default function SellForm() {
   const { lang } = useLanguage();
   const c = t[lang];
+  const [interestType, setInterestType] = useState<"cash" | "flex">("cash");
   const [address, setAddress] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -104,6 +113,8 @@ export default function SellForm() {
     const params = new URLSearchParams(window.location.search);
     const a = params.get("address");
     if (a) setAddress(a);
+    const type = params.get("type");
+    if (type === "flex") setInterestType("flex");
   }, []);
 
   useEffect(() => {
@@ -162,6 +173,41 @@ export default function SellForm() {
   return (
     <form onSubmit={handleSubmit} style={{ background: "var(--white)", border: "1px solid var(--border-light)", borderRadius: "var(--radius)", padding: "40px" }}>
 
+      {/* Interest toggle */}
+      <div style={{ marginBottom: "24px" }}>
+        <div className="form-label" style={{ marginBottom: "10px" }}>{c.interestLabel}</div>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px" }}>
+          {(["cash", "flex"] as const).map((type) => {
+            const active = interestType === type;
+            const label = type === "cash" ? c.interestCash : c.interestFlex;
+            return (
+              <button
+                key={type}
+                type="button"
+                onClick={() => setInterestType(type)}
+                style={{
+                  padding: "12px 16px",
+                  borderRadius: "var(--radius-sm)",
+                  border: active ? "2px solid var(--blue)" : "1.5px solid var(--border-mid)",
+                  background: active ? "var(--blue-light)" : "var(--white)",
+                  color: active ? "var(--blue)" : "var(--mid)",
+                  fontFamily: "inherit",
+                  fontSize: "13px",
+                  fontWeight: active ? 600 : 500,
+                  cursor: "pointer",
+                  transition: "all 0.15s",
+                  textAlign: "center",
+                  lineHeight: 1.3,
+                }}
+              >
+                {label}
+              </button>
+            );
+          })}
+        </div>
+        <input type="hidden" name="interestType" value={interestType} />
+      </div>
+
       <div className="form-row-2">
         <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
           <label className="form-label" htmlFor="firstName">{c.firstName}</label>
@@ -186,18 +232,27 @@ export default function SellForm() {
 
       <div style={{ display: "flex", flexDirection: "column", gap: "6px", marginBottom: "14px" }}>
         <label className="form-label" htmlFor="address">{c.address}</label>
-        <input
-          ref={addressRef}
-          id="address"
-          name="address"
-          type="text"
-          required
-          className="form-input"
-          placeholder={c.addressPlaceholder}
-          value={address}
-          onChange={(e) => setAddress(e.target.value)}
-          autoComplete="off"
-        />
+        <div style={{ position: "relative", display: "flex", alignItems: "center", background: "var(--white)", border: "1px solid var(--border-mid)", borderRadius: "50px", transition: "border-color 0.15s, box-shadow 0.15s" }}
+          onFocusCapture={(e) => { e.currentTarget.style.borderColor = "var(--blue)"; e.currentTarget.style.boxShadow = "0 0 0 3px rgba(26,86,219,0.1)"; }}
+          onBlurCapture={(e) => { e.currentTarget.style.borderColor = "var(--border-mid)"; e.currentTarget.style.boxShadow = "none"; }}
+        >
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ position: "absolute", left: "16px", flexShrink: 0, pointerEvents: "none" }}>
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
+            <circle cx="12" cy="9" r="2.5" />
+          </svg>
+          <input
+            ref={addressRef}
+            id="address"
+            name="address"
+            type="text"
+            required
+            placeholder={c.addressPlaceholder}
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
+            autoComplete="off"
+            style={{ width: "100%", padding: "13px 16px 13px 40px", fontSize: "14px", border: "none", outline: "none", background: "transparent", color: "var(--black)", fontFamily: "inherit", borderRadius: "50px" }}
+          />
+        </div>
       </div>
 
       <div className="form-row-2">
@@ -224,7 +279,7 @@ export default function SellForm() {
       </div>
 
       <button type="submit" disabled={loading} className="btn-blue btn-blue-lg" style={{ width: "100%", justifyContent: "center" }}>
-        {loading ? c.submitting : c.submit}
+        {loading ? c.submitting : interestType === "flex" ? c.submitFlex : c.submitCash}
       </button>
 
       <p style={{ fontSize: "12px", color: "var(--muted)", textAlign: "center", marginTop: "14px" }}>{c.footer}</p>

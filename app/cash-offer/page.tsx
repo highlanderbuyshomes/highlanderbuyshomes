@@ -247,7 +247,8 @@ export default function CashOfferPage() {
                 {c.compareH2}
               </h2>
             </div>
-            <div style={{ background: "var(--white)", border: "1px solid var(--border-light)", borderRadius: "14px", overflow: "hidden" }}>
+            <div style={{ overflowX: "auto", WebkitOverflowScrolling: "touch" }}>
+            <div style={{ minWidth: "520px", background: "var(--white)", border: "1px solid var(--border-light)", borderRadius: "14px", overflow: "hidden" }}>
               <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr 1fr", background: "var(--off-white)", borderBottom: "1px solid var(--border-light)" }}>
                 <div style={{ padding: "12px 22px" }} />
                 <div style={{ padding: "12px 22px", fontSize: "11px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.8px", color: "var(--muted)", textAlign: "center" }}>{c.compareCols.trad}</div>
@@ -260,6 +261,7 @@ export default function CashOfferPage() {
                   <div style={{ padding: "15px 22px", fontSize: "13px", color: "var(--blue)", textAlign: "center", fontWeight: 600, background: "rgba(26,86,219,0.025)" }}>{row.ours}</div>
                 </div>
               ))}
+            </div>
             </div>
           </div>
         </div>
@@ -326,7 +328,7 @@ export default function CashOfferPage() {
                 Cities We Buy In
               </h2>
             </div>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "32px", maxWidth: "860px", margin: "0 auto" }}>
+            <div className="two-col" style={{ maxWidth: "860px", margin: "0 auto" }}>
               {[
                 { metro: "Phoenix, Arizona", cities: [
                   { name: "Phoenix",   slug: "phoenix-az" },
